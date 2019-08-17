@@ -1,0 +1,15 @@
++++
+title = "Conway Checkers"
++++
+Conway Checkers (or: [Conway's Soldiers](https://en.wikipedia.org/wiki/Conway%27s_Soldiers)) is a single player game on a checkerboard with an interesting twist: the board is infinite.
+
+Infinite objects aren't really compatible with physical space, so I made [a thing where you can play it](https://www.hankruiger.com/conway-checkers/).
+
+The rules are simple:
+1. You set up the game by placing your pieces below a horizontal line. You can use any number of pieces you like.
+2. The goal is to move any of your pieces *above* the line as far as possible.
+3. The only legal move is to—vertically or horizontally—jump over an adjacent piece to an empty spot. The adjacent piece dies during this process.
+
+I challenge you to beat my highscore: 4.
+
+If you want to learn more, check out [the video that introduced me to it](https://youtu.be/FtNWzlfEQgY), or [the video that proves you can never beat me](https://youtu.be/Or0uWM9bT5w).

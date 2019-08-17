@@ -1,0 +1,12 @@
++++
+title = "Graph Editor"
++++
+Large networks (loosely known as graphs in mathematics) can be hard to visualise.
+
+An intuitive method is to draw them as node-link diagrams.
+In a node-link diagram, the network entities are drawn as nodes, and the connections are drawn as lines.
+To draw these things, we need to find proper positions for the nodes.
+This is where [graph layouts](https://en.wikipedia.org/wiki/Graph_drawing#Layout_methods) come into play.
+
+A common way to lay out the nodes is to use a force-based simulation, and treat the nodes and links as a spring-mass system.
+While learning about this, I made [a thing](https://www.hankruiger.com/graph-editor/) that demonstrates it (but is otherwise completely useless).

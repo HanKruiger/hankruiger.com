@@ -1,0 +1,53 @@
+html {
+    font-size: 18px;
+}
+
+body {
+    max-width: 600px;
+    margin: auto;
+    background: rgb(230, 230, 230);
+    font-family: sans-serif;
+    line-height: 1.4;
+}
+
+header, footer {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header {
+    border-bottom: 1px solid black;
+}
+
+footer {
+    border-top: 1px solid black;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+}
+
+header a {
+    padding: 0.2rem;
+}
+
+header a, header a:visited {
+    font-size: 1.5rem;
+    color: black;
+}
+
+header a.active_section {
+    background: rgb(190, 190, 190);
+    text-decoration: none;
+}
+
+header a:hover {
+    color: rgb(95, 95, 95);
+}
+
+div.footnote-definition:last-of-type {
+    margin-block-end: 1em;
+}
+
+div.footnote-definition p {
+    display: inline;
+    font-size: 0.85rem;
+}

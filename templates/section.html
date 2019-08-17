@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {{ section.content | safe }}
+    {% if section.pages %}
+        <table>
+            <tbody>
+                {% for page in section.pages %}
+                    <tr>
+                        <td>{{page.date | date(format="%b %e, %Y") }}</td>
+                        <td><a href="/{{ page.path }}">{{ page.title }}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock content %}
