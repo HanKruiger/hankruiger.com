@@ -8,6 +8,7 @@ body {
     background: rgb(230, 230, 230);
     font-family: sans-serif;
     line-height: 1.4;
+    padding: 1em;
 }
 
 header, footer {
