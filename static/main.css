@@ -16,6 +16,14 @@ header, footer {
     padding: 1rem 0;
 }
 
+footer div {
+    margin-bottom: 1em;
+}
+
+footer div:last-child {
+    margin-bottom: 0;
+}
+
 header {
     border-bottom: 1px solid black;
 }
