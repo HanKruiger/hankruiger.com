@@ -22,7 +22,7 @@ But I did develop skills in analytic problem solving, learned a lot of interesti
 Computer simulations intrigue me, and that pushed me to follow a master programme in **Computing Science**[^1].
 I really enjoyed this, as software allows me to easily build things that are interesting and useful (but mostly interesting).
 In the later stages of the programme I focused on data visualisation.
-My master thesis on visualising high-dimensional data also led to [a publication](https://doi.org/10.1111/cgf.13187).
+My master thesis on graph drawing also led to [a publication](https://doi.org/10.1111/cgf.13187).
 
 I spent more time doing research on data visualisation in Groningen, and did a 3-month internship at VMware in Palo Alto, California, working on [Hillview](https://github.com/vmware/hillview).
 
