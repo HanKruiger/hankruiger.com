@@ -1,4 +1,10 @@
 language: minimal
+dist: bionic
+addons:
+  snaps:
+    - zola
+before-deploy:
+  - zola --version
 deploy:
   provider: pages
   skip_cleanup: true
