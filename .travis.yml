@@ -6,6 +6,7 @@ addons:
       channel: latest/edge
 script:
   - zola build
+  - cp .gitignore ./public
 deploy:
   provider: pages
   skip_cleanup: true
@@ -13,5 +14,6 @@ deploy:
   keep_history: true
   target_branch: master
   local_dir: public
+  fqdn: www.hankruiger.com
   on:
     branch: develop
