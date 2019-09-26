@@ -5,6 +5,6 @@ deploy:
   github_token: $GITHUB_TOKEN
   keep_history: true
   target_branch: ci-test
-  local_dir: static # Change to 'public' after testing/building
+  local_dir: public
   on:
     branch: develop
