@@ -11,7 +11,7 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
-  target_branch: ci-test
+  target_branch: master
   local_dir: public
   on:
     branch: develop
