@@ -2,7 +2,8 @@ language: minimal
 dist: bionic
 addons:
   snaps:
-    - zola
+    name: zola
+    channel: latest/edge
 before-deploy:
   - zola --version
 deploy:
