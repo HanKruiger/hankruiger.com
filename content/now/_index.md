@@ -3,7 +3,7 @@ title = "Now"
 +++
 This is my now page.
 Here, you can read about what I'm focusing on at this point in my life.
-For more about now pages, [read this](https://nownownow.com/about).
+For more about now pages, read [this explanation on nownownow.com](https://nownownow.com/about).
 
 ## Living
 I recently moved to Utrecht.
