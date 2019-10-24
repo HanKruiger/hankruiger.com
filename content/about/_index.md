@@ -1,5 +1,6 @@
 +++
 title = "About"
+description = "Han Kruiger's about page"
 +++
 Do you want to know what I do **now**? Check out [my now page](/now)!
 

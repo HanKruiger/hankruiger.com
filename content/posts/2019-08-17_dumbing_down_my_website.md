@@ -1,5 +1,6 @@
 +++
 title = "Dumbing down my website"
+description = "Post about my website, and how and why I dumbed it down"
 +++
 When you're reading this, my website has been updated to be more minimal, simple, and fast.
 

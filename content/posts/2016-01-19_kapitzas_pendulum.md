@@ -1,5 +1,6 @@
 +++
 title = "Kapitza's Pendulum"
+description = "Post about Kapitza's Pendulum"
 +++
 When you hold a pendulum upright—with its mass above the pivot point—it will tumble down, right?
 

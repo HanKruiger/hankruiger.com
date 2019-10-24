@@ -1,5 +1,6 @@
 +++
 title = "Now"
+description = "Han Kruiger's now page"
 +++
 This is my now page.
 Here, you can read about what I'm focusing on at this point in my life.
