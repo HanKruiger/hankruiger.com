@@ -25,7 +25,7 @@ I really enjoyed this, as software allows me to easily build things that are int
 In the later stages of the programme I focused on data visualisation.
 My master thesis on graph drawing also led to [a publication](https://doi.org/10.1111/cgf.13187).
 
-I spent more time doing research on data visualisation in Groningen, and did a 3-month internship at VMware in Palo Alto, California, working on [Hillview](https://github.com/vmware/hillview).
+I spent more time doing research on data visualisation in Groningen, and did a 3-month internship at VMware in Palo Alto, California, working on [Hillview](https://github.com/vmware/hillview), a big data spreadsheet with a web front-end.
 
 At some point, I shifted gears to do work in industry.
 For about a year I worked as a Data Scientist / Developer at [Belsimpel](https://www.belsimpel.nl), in their office that is beautifully located in the heart of Groningen.
