@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% if section.description %}
-            <meta name="Description" content="{{ section.description }}">
-        {% endif %}
+        <meta name="Description" content="{% block description %}{{section.description}}{% endblock description %}">
         <link rel="shortcut icon" href="/favicon.png" type="image/png">
         <link rel="stylesheet" href="/main.css">
         <title>Han | {% block title %}{{ section.title }}{% endblock title %}</title>

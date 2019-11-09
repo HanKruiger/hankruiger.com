@@ -1,10 +1,14 @@
 <header>
-    <a href="/" {%if current_path == "/"%}class="active_section"{%endif%}>Home</a>
-    {% for header_section in config.extra.header_sections %}
-        <a href="/{{ header_section.path }}"
-        {% if current_path is starting_with(header_section.path) %}
+    <a href="/"
+        {% if current_path == "/" %}
             class="active_section"
         {% endif %}
+    >Home</a>
+    {% for header_section in config.extra.header_sections %}
+        <a href="/{{ header_section.path }}"
+            {% if current_path is starting_with(header_section.path) %}
+                class="active_section"
+            {% endif %}
         >{{ header_section.title }}</a>
     {% endfor %}
 </header>

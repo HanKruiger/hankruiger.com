@@ -22,7 +22,7 @@ generate_rss = true
 # List of section/page links that should be displayed in the header.
 # (In addition to a link to the base URL.)
 header_sections = [
-    { path = 'posts', title = 'Posts'},
-    { path = 'about', title = 'About'},
-    { path = 'now', title = 'Now'}
+    { path = 'posts', title = 'Posts' },
+    { path = 'about', title = 'About' },
+    { path = 'now', title = 'Now' }
 ]

@@ -1,5 +1,8 @@
 +++
 description = "Han Kruiger's about page"
+title = "About"
+[extra]
+show_title = false
 +++
 Do you want to know what I do **now**? Check out [my now page](/now)!
 
