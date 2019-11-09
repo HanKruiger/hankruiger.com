@@ -19,5 +19,10 @@ generate_rss = true
 [extra]
 # Put all your custom variables here
 
-# List of section indexes that should be displayed in the header.
-header_section_paths = ['_index.md', 'posts/_index.md', 'about/_index.md', 'now/_index.md']
+# List of section/page links that should be displayed in the header.
+# (In addition to a link to the base URL.)
+header_sections = [
+    { path = 'posts', title = 'Posts'},
+    { path = 'about', title = 'About'},
+    { path = 'now', title = 'Now'}
+]

@@ -1,5 +1,4 @@
 +++
-title = "Now"
 description = "Han Kruiger's now page"
 +++
 This is my now page.
