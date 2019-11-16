@@ -24,5 +24,6 @@ generate_rss = true
 header_sections = [
     { path = 'posts', title = 'Posts' },
     { path = 'about', title = 'About' },
+    { path = 'cv', title = 'CV' },
     { path = 'now', title = 'Now' }
 ]
