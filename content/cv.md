@@ -74,7 +74,7 @@ I made a (retrospectively not very pretty) [visualisation of a model of Kapitza'
 
 I also made a [demonstration of a force-directed graph drawing method](https://www.hankruiger.com/graph-editor/), because I was intrigued by this.
 
-In 2016, I graduated cum laude!
+In 2016, I graduated with honours!
 
 Tech:
 - MATLAB / GNU Octave
