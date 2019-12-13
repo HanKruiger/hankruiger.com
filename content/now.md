@@ -22,3 +22,4 @@ The goal of my project is to be able to describe the usability of geo-data sourc
 
 ## Side projects
 * I'm updating my website, and will probably tweak a lot of stuff over the next several months.
+* I'm learning Danish on Duolingo.
