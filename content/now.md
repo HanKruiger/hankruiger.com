@@ -18,8 +18,9 @@ I work as a PhD candidate at Utrecht University on the [QuAnGIS project](https:/
 The goal of my project is to be able to describe the usability of geo-data sources for answering questions in human geography.
 
 ## Reading
-* I'm reading *The Master Algorithm* by Pedro Domingos.
+* I'm reading *The Count of Monte Cristo* by Alexandre Dumas.
 
 ## Side projects
 * I'm updating my website, and will probably tweak a lot of stuff over the next several months.
 * I'm learning Danish on Duolingo.
+* I'm de-Googling my digital life.
