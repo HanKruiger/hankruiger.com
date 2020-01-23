@@ -1,10 +1,13 @@
 <script>
     (function() {
+        // Honor DNT
         if ('doNotTrack' in navigator && navigator.doNotTrack === '1')
             return;
 
         window.goatcounter = window.goatcounter || {};
         window.goatcounter.vars = {
+            // Simple method for removing queries from URL.
+            path: location.pathname || '/',
             // Very simplistic method to get referrer from URL (e.g. ?ref=Newsletter)
             referrer: (window.location.search ? window.location.search.split('=')[1] : null),
         };
