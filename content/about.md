@@ -34,7 +34,6 @@ For about a year I worked as a Data Scientist / Developer at [Belsimpel](https:/
 There, I worked on the in-house A/B testing system, visual business analytics, and other things.
 
 After doing work in industry for a year, I decided it was time to go back to research and I applied for a PhD position at Utrecht University to work on automated question-answering in geographical information systems.
-Fortunately, I was hired, and this is what I do now.
 
 [^1]: Note that the programme in Groningen is called Comput*ing* Science, as opposed to the [more prevalent](https://books.google.com/ngrams/graph?content=computer+science%2Ccomputing+science) Comput*er* Science.
 Comput*ing* Science implies that it focuses on how things can be computed, whereas Comput*er* Science implies that the goal is to study computers.

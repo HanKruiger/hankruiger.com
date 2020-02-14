@@ -9,10 +9,10 @@ This is my public CV in reverse chronological order.
 
 ## Work experience
 
-### (2019 - present) PhD at Utrecht University
-Currently, I work in the [QuAnGIS project](https://www.questionbasedanalysis.com/).
+### (2019 - 2020) PhD at Utrecht University
+Most recently, I worked in the [QuAnGIS project](https://www.questionbasedanalysis.com/).
 
-The focus of my thesis is to be able to describe the usability of geo-data sources for answering questions in human geography.
+The focus of my work was to be able to describe the usability of geo-data sources for answering questions in human geography.
 These descriptions should be processable by a machine, so that question answering can be automated.
 
 Tech:
