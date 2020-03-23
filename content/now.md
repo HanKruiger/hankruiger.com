@@ -12,7 +12,7 @@ For more about now pages, read [this explanation on nownownow.com](https://nowno
 *I am looking for new job opportunities. I hope to find a developer / data analysis position at an organisation that is relevant for society.*
 
 ## Reading
-* I'm reading *De meeste mensen deugen* by Rutger Bregman.
+* I'm reading *The Last Wish* by Andrzej Sapkowski.
 
 ## Side projects
 * I'm learning Danish on Duolingo.
