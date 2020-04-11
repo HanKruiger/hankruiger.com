@@ -15,5 +15,4 @@ For more about now pages, read [this explanation on nownownow.com](https://nowno
 * I'm reading *The Last Wish* by Andrzej Sapkowski.
 
 ## Side projects
-* I'm learning Danish on Duolingo.
-* I'm de-Googling my digital life.
+* I'm working through [Crafting Interpreters](https://craftinginterpreters.com/) by Bob Nystrom.
