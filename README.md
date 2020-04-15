@@ -17,8 +17,3 @@ To build the website locally:
 ```
 zola build
 ```
-
-## How is it deployed?
-
-Travis CI is set up to build the website and push it to the `master` branch.
-GitHub Pages makes sure that the contents of the `master` branch are deployed to my domain.
