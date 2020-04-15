@@ -14,8 +14,8 @@ The Markdown (and some templates) are processed by Zola to build the content tha
 
 I decided not to use any of the themes that come with Zola, and instead use my own simple themes and templates, to keep it even more minimalistic.
 
-If you're interested, the source code of my website is public, and can be seen in [this repository](https://github.com/HanKruiger/hankruiger.github.io).
+If you're interested, the source code of my website is public, and can be seen in [this repository](https://github.com/HanKruiger/hankruiger.com).
 
-[^1]: I use [GitHub Pages](https://pages.github.com/) for this. It's free. For my domain name, I used [Hover](https://hover.com/UwXttcIC)[^2], which is not free, but really easy to use.
+[^1]: I use [Netlify](https://netlify.com/) for this. It's free. For my domain name, I used [Hover](https://hover.com/UwXttcIC)[^2], which is not free, but really easy to use.
 
 [^2]: Yes, that's a referral link right there.
