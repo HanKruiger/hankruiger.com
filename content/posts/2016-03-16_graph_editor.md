@@ -10,4 +10,4 @@ To draw these things, we need to find proper positions for the nodes.
 This is where [graph layouts](https://en.wikipedia.org/wiki/Graph_drawing#Layout_methods) come into play.
 
 A common way to lay out the nodes is to use a force-based simulation, and treat the nodes and links as a spring-mass system.
-While learning about this, I made [a thing](https://www.hankruiger.com/graph-editor/) that demonstrates it (but is otherwise completely useless).
+While learning about this, I made [a thing](https://demos.hankruiger.com/graph-editor/) that demonstrates it (but is otherwise completely useless).
