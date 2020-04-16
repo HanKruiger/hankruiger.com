@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/HanKruiger/hankruiger.github.io.svg?branch=develop)](https://travis-ci.org/HanKruiger/hankruiger.github.io)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8cf8888e-270d-4650-89dd-2cb056d66274/deploy-status)](https://app.netlify.com/sites/hankruiger/deploys)
 
 # My Personal Website
 
