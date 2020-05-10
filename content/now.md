@@ -9,7 +9,7 @@ Here, you can read about what I'm focusing on at this point in my life.
 For more about now pages, read [this explanation on nownownow.com](https://nownownow.com/about).
 
 ## Working
-*I am looking for new job opportunities. I hope to find a developer / data analysis position at an organisation that is relevant for society.*
+*I am looking for new job opportunities. I hope to find a developer / data analysis position at an organisation that is relevant to society.*
 
 ## Reading
 * I'm reading *The Last Wish* by Andrzej Sapkowski.
