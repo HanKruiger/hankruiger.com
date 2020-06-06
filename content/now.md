@@ -12,7 +12,7 @@ For more about now pages, read [this explanation on nownownow.com](https://nowno
 *I am looking for new job opportunities. I hope to find a developer / data analysis position at an organisation that is relevant to society.*
 
 ## Reading
-I'm reading *Gratis Geld Voor Iedereen*, a book about universal basic income by Rutger Bregman.
+I'm reading *Gratis Geld voor Iedereen*, a book about universal basic income by Rutger Bregman.
 
 ## Side projects
 * I'm creating a multiplayer HTML5 RPG video game with my own engine. Follow my progress [here](https://t.me/hangamelog).
