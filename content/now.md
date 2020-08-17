@@ -12,4 +12,4 @@ For more about now pages, read [this explanation on nownownow.com](https://nowno
 In September 2020, I will start working in [TNO's Data Science department](https://www.tno.nl/en/focus-areas/information-communication-technology/expertise-groups/data-science/) as a *Junior Developer Semantic Smart Technology*.
 
 ## Reading
-I'm reading *The Nix* by Nathan Hill.
+I'm reading *Mythos* by Stephen Fry.
