@@ -11,7 +11,7 @@ highlight_code = false
 build_search_index = false
 
 # Whether to generate a RSS feed automatically
-generate_rss = true
+generate_feed = true
 
 [extra]
 # Put all your custom variables here
