@@ -3,9 +3,6 @@ base_url = "https://www.hankruiger.com"
 
 title = "Han Kruiger"
 
-# Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
-
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = false
@@ -22,8 +19,8 @@ generate_rss = true
 # List of section/page links that should be displayed in the header.
 # (In addition to a link to the base URL.)
 header_sections = [
-    { path = 'posts', title = 'Posts' },
-    { path = 'about', title = 'About' },
-    { path = 'cv', title = 'CV' },
-    { path = 'now', title = 'Now' }
+    { path = '/posts', title = 'Posts' },
+    { path = '/about', title = 'About' },
+    { path = '/cv', title = 'CV' },
+    { path = '/now', title = 'Now' }
 ]
