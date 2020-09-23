@@ -12,4 +12,4 @@ For more about now pages, read [this explanation on nownownow.com](https://nowno
 I work as a *Junior Scientist Innovator* at [TNO](https://www.tno.nl/).
 
 ## Reading
-I'm reading *Stoorzender* by Arjen Lubach.
+I'm reading *The Order of Time* by Carlo Rovelli.
