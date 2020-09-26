@@ -9,8 +9,17 @@ This is my public CV in reverse chronological order.
 
 ## Work experience
 
+### (2020 - present) Junior Scientist innovator at Netherlands Organisation for Applied Scientific Research (TNO)
+I work in projects in several industries involving data sharing and interoperability.
+
+Tech:
+- Java
+- [Apache Jena](https://jena.apache.org)
+- [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web)
+
+
 ### (2019 - 2020) PhD at Utrecht University
-Most recently, I worked in the [QuAnGIS project](https://www.questionbasedanalysis.com/).
+I worked in the [QuAnGIS project](https://www.questionbasedanalysis.com/).
 
 The focus of my work was to be able to describe the usability of geo-data sources for answering questions in human geography.
 These descriptions should be processable by a machine, so that question answering can be automated.
@@ -36,7 +45,6 @@ Tech:
 - [Laravel](https://laravel.com/)
 - [Vue.js](https://vuejs.org/)
 - [D3.js](https://d3js.org/)
-- Git
 - [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
 
 ### (2017) Research internship at VMware
@@ -46,9 +54,9 @@ My focus was on visualisation, and the aim was to [integrate dimensionality redu
 
 Tech:
 - [TypeScript](https://www.typescriptlang.org/)
+- [D3.js](https://d3js.org/)
 - Java
 - [Webpack](https://webpack.js.org/)
-- Git
 
 ### (2016 - 2017) PhD at University of Groningen[^1]
 I did research on data visualisation.

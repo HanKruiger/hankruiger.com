@@ -33,7 +33,9 @@ At some point, I shifted gears to do work in industry.
 For about a year I worked as a Data Scientist / Developer at [Belsimpel](https://www.belsimpel.nl), in their office that is beautifully located in the heart of Groningen.
 There, I worked on the in-house A/B testing system, visual business analytics, and other things.
 
-After doing work in industry for a year, I decided it was time to go back to research and I applied for a PhD position at Utrecht University to work on automated question-answering in geographical information systems.
+After working in industry for a year, I was tempted again by academia. I spent a good part of a year learning about Semantic Web technology and geographical information systems as a PhD student at Utrecht University.
+
+In 2020 I found a job at the Netherlands Organisation for Applied Scientific Research (TNO) as a Junior Scientist Innovator. I continue to work with (and learn about) Semantic Web technology, in projects with applications in multiple domains.
 
 [^1]: Note that the programme in Groningen is called Comput*ing* Science, as opposed to the [more prevalent](https://books.google.com/ngrams/graph?content=computer+science%2Ccomputing+science) Comput*er* Science.
 Comput*ing* Science implies that it focuses on how things can be computed, whereas Comput*er* Science implies that the goal is to study computers.
