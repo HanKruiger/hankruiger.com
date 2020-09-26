@@ -9,8 +9,8 @@ This is my public CV in reverse chronological order.
 
 ## Work experience
 
-### (2020 - present) Junior Scientist innovator at Netherlands Organisation for Applied Scientific Research (TNO)
-I work in projects in several industries involving data sharing and interoperability.
+### (2020 - present) Junior Scientist Innovator at [TNO](https://www.tno.nl/)
+I work in projects with applications in several industries involving data sharing and interoperability.
 
 Tech:
 - Java
