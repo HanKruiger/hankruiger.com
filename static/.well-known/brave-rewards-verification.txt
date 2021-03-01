@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: hankruiger.com
+Token: dd44634d0c71caa98689920a44baddd9de043b4d77786a0484912ae15d9a50f5
