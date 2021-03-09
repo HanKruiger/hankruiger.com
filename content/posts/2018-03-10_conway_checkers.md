@@ -2,6 +2,7 @@
 title = "Conway Checkers"
 description = "Post about Conway Checkers"
 +++
+
 Conway Checkers (or: [Conway's Soldiers](https://en.wikipedia.org/wiki/Conway%27s_Soldiers)) is a single player game on a checkerboard with an interesting twist: the board is infinite.
 
 Infinite objects aren't really compatible with physical space, so I made [a thing where you can play it](https://demos.hankruiger.com/conway-checkers/).

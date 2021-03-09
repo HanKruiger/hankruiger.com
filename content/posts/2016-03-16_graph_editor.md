@@ -2,6 +2,7 @@
 title = "Graph Editor"
 description = "Post about graph drawing and a graph editor"
 +++
+
 Large networks (loosely known as graphs in mathematics) can be hard to visualise.
 
 An intuitive method is to draw them as node-link diagrams.

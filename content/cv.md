@@ -17,7 +17,6 @@ Tech:
 - [Apache Jena](https://jena.apache.org)
 - [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web)
 
-
 ### (2019 - 2020) PhD at Utrecht University
 I worked in the [QuAnGIS project](https://www.questionbasedanalysis.com/).
 

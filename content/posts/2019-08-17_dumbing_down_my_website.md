@@ -2,6 +2,7 @@
 title = "Dumbing down my website"
 description = "Post about my website, and how and why I dumbed it down"
 +++
+
 When you're reading this, my website has been updated to be more minimal, simple, and fast.
 
 These days, many websites come with bandwidth-heavy stuff like custom fonts, bundled JavaScript, front-end UI frameworks, and more.
@@ -16,6 +17,4 @@ I decided not to use any of the themes that come with Zola, and instead use my o
 
 If you're interested, the source code of my website is public, and can be seen in [this repository](https://github.com/HanKruiger/hankruiger.com).
 
-[^1]: I use [Netlify](https://netlify.com/) for this. It's free. For my domain name, I used [Hover](https://hover.com/UwXttcIC)[^2], which is not free, but really easy to use.
-
-[^2]: Yes, that's a referral link right there.
+[^1]: I use [Netlify](https://netlify.com/) for this. It's free. For my domain name, I used [Hover](https://hover.com/), which is not free, but really easy to use.
