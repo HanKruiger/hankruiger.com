@@ -21,6 +21,3 @@ I recently watched and enjoyed:
 - *The Queen's Gambit*
 - *The Restaurant* (*Vår tid är nu*)
 - *The Crown*
-
-## Building
-I'm experimenting with [Godot](https://godotengine.org/) to see if it's a good fit for a video game idea.
