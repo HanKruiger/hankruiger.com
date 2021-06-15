@@ -14,6 +14,10 @@ I work in projects with applications in several industries involving data sharin
 
 Tech:
 - Java
+- Python
+- JavaScript
+- [Svelte](https://svelte.dev/)
+- [Rust](https://www.rust-lang.org/) + [WebAssembly](https://webassembly.org/) = [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen)
 - [Apache Jena](https://jena.apache.org)
 - [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web)
 
