@@ -8,7 +8,7 @@
                 {% for page in section.pages %}
                     <tr>
                         <td>{{page.date | date(format="%b %e, %Y") }}</td>
-                        <td><a href="{{ page.permalink }}">{{ page.title }}</a></td>
+                        <td><a href="{{ page.path }}">{{ page.title }}</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
