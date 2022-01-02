@@ -24,4 +24,5 @@ I'm reading:
 ## Watching
 I recently watched and enjoyed:
 
-- *Wheel of Time*
+- *The Wheel of Time*
+- *Don't Look Up*
