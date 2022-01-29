@@ -7,24 +7,25 @@ show_title = false
 
 Do you want to know what I do **now**? Check out [my now page](/now)!
 
+For a more to the point list of my work experience and education with more technical details, check out my [CV](/cv).
+
 # Who is this guy?
 This guy is Han.
 Han was born in Groningen in 1992, and he will stop writing in third person now.
 
 At some point, I moved to Friesland, where I finished my primary and secondary education.
 During this time I picked up playing the **guitar**, and appreciating **music** in general.
-As many teenagers do, I liked video games, and spent many hours playing games like *Rollercoaster Tycoon*, *RuneScape*, *A2 Racer*, *Tony Hawk's Pro Skater*, and others.
+As many teenagers do, I was into video games, and spent countless hours playing games like *Rollercoaster Tycoon*, *RuneScape*, *A2 Racer*, *Tony Hawk's Pro Skater*, and others.[^1]
 
 After finishing secondary school in Leeuwarden, I moved to Groningen to study **Physics**.
 Physics is cool, because it aims to *understand everything that exists in the universe*.
 
 So, naturally, I embarked expecting to solve the ultimate mysteries of life, the universe, and everything.
-(Not really, but I was hopeful and inspired. Today I am also realistic.)
 Unfortunately, I didn't develop a theory of everything (yet!).
-But I did develop skills in analytic problem solving, learned a lot of interesting stuff, and even [got published in an academic journal](https://doi.org/10.1063/1.4907277) as a result of my bachelor thesis on spectroscopy simulations!
+But I did develop skills in analytic problem solving, learned a lot of interesting stuff, and even [got published in a journal](https://doi.org/10.1063/1.4907277) as a result of my bachelor thesis on spectroscopy simulations!
 
-Computer simulations intrigue me, and that pushed me to follow a master programme in **Computing Science**[^1].
-I really enjoyed this, as software allows me to easily build things that are interesting and useful (but mostly interesting).
+Computer simulations intrigue me, and that pushed me to follow a master programme in **Computing Science**[^2].
+I really enjoyed this, as software allows me to easily build things that are interesting and useful.
 In the later stages of the programme I focused on data visualisation.
 My master thesis on graph drawing also led to [a publication](https://doi.org/10.1111/cgf.13187).
 
@@ -36,7 +37,9 @@ There, I worked on the in-house A/B testing system, visual business analytics, a
 
 After working in industry for a year, I was tempted again by academia. I spent a good part of a year learning about Semantic Web technology and geographical information systems as a PhD student at Utrecht University.
 
-In 2020 I found a job at the Netherlands Organisation for Applied Scientific Research (TNO) as a Junior Scientist Innovator. I continue to work with (and learn about) Semantic Web technology, in projects with applications in multiple domains.
+In 2020 I found a job at the Netherlands Organisation for Applied Scientific Research (TNO) as a Scientist Innovator. I continue to work with (and learn about) Semantic Web technology, in projects with applications in multiple domains.
 
-[^1]: Note that the programme in Groningen is called Comput*ing* Science, as opposed to the [more prevalent](https://books.google.com/ngrams/graph?content=computer+science%2Ccomputing+science) Comput*er* Science.
+[^1]: Fun fact! I recently picked up and enjoyed remasters of two of these games: [Old School RuneScape](https://oldschool.runescape.com/) and [Tony Hawk's Pro Skater 1 + 2](https://en.wikipedia.org/wiki/Tony_Hawk's_Pro_Skater_1_%2B_2).
+
+[^2]: Note that the programme in Groningen is called Comput*ing* Science, as opposed to the [more prevalent](https://books.google.com/ngrams/graph?content=computer+science%2Ccomputing+science) Comput*er* Science.
 Comput*ing* Science implies that it focuses on how things can be computed, whereas Comput*er* Science implies that the goal is to study computers.
