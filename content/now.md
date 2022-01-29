@@ -24,5 +24,7 @@ I'm reading:
 ## Watching
 I recently watched and enjoyed:
 
+- *Ted Lasso*
+- *The Witcher*
 - *The Wheel of Time*
 - *Don't Look Up*

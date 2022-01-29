@@ -9,7 +9,7 @@ This is my public CV in reverse chronological order.
 
 ## Work experience
 
-### (2020 - present) Junior Scientist Innovator at [TNO](https://www.tno.nl/)
+### (2020 - present) Scientist Innovator at [TNO](https://www.tno.nl/)
 I work in projects with applications in several industries involving data sharing and interoperability.
 
 Tech:
@@ -20,8 +20,9 @@ Tech:
 - [Rust](https://www.rust-lang.org/) + [WebAssembly](https://webassembly.org/) = [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen)
 - [Apache Jena](https://jena.apache.org)
 - [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web)
+- [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
 
-### (2019 - 2020) PhD at Utrecht University
+### (2019 - 2020) PhD student at Utrecht University
 I worked in the [QuAnGIS project](https://www.questionbasedanalysis.com/).
 
 The focus of my work was to be able to describe the usability of geo-data sources for answering questions in human geography.
@@ -61,12 +62,12 @@ Tech:
 - Java
 - [Webpack](https://webpack.js.org/)
 
-### (2016 - 2017) PhD at University of Groningen[^1]
+### (2016 - 2017) PhD student at University of Groningen
 I did research on data visualisation.
 Specifically, I focused on using dimensionality reduction to visualise datasets.
 
 One of the projects I worked on was to apply dimensionality reduction techniques to the problem of graph layouts.
-This resulted in [tsNET](https://www.researchgate.net/profile/Johannes_Kruiger/publication/318200397_Graph_Layouts_by_t-SNE/links/599b0cf0a6fdcc500349aef1/Graph-Layouts-by-t-SNE.pdf).
+This resulted in [tsNET](https://doi.org/10.1111/cgf.13187).
 
 [Another project](http://www.staff.science.uu.nl/~telea001/InfoVis/PNIELD) involved navigating through large high-dimensional datasets.
 
@@ -81,9 +82,9 @@ Tech:
 ### (2014 - 2016) Computing Science MSc at University of Groningen
 During my master's, I was very interested in modelling, simulation, and visualisation.
 
-I made a (retrospectively not very pretty) [visualisation of a model of Kapitza's pendulum](https://www.hankruiger.com/inverted-pendulum/).
+I made a (retrospectively not very pretty) [visualisation of a model of Kapitza's pendulum](https://demos.hankruiger.com/inverted-pendulum/).
 
-I also made a [demonstration of a force-directed graph drawing method](https://www.hankruiger.com/graph-editor/), because I was intrigued by this.
+I also made a [demonstration of a force-directed graph drawing method](https://demos.hankruiger.com/graph-editor/), because I was intrigued by this.
 
 In 2016, I graduated with honours!
 
@@ -105,8 +106,3 @@ I did a minor in Computing Science, which drove me to persue a master's degree i
 Tech:
 - MATLAB / GNU Octave
 - C
-
-[//]: # (This div is a workaround for https://github.com/raphlinus/pulldown-cmark/issues/413)
-<div></div>
-
-[^1]: Not completed.
