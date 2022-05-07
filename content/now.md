@@ -18,13 +18,11 @@ Most of my activities are related to data interoperability, front- and backend d
 ## Reading
 I'm reading:
 
-- *The Secret Commonwealth* by Philip Pullman
 - *The History of Bees* by Maja Lunde
 
 ## Watching
 I recently watched and enjoyed:
 
+- *Severance*
 - *Ted Lasso*
 - *The Witcher*
-- *The Wheel of Time*
-- *Don't Look Up*
