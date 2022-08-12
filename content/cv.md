@@ -16,7 +16,9 @@ Tech:
 - Java
 - Python
 - JavaScript
+- [Django](https://www.djangoproject.com)
 - [Svelte](https://svelte.dev/)
+- [Vue.js](https://vuejs.org/)
 - [Rust](https://www.rust-lang.org/) + [WebAssembly](https://webassembly.org/) = [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen)
 - [Apache Jena](https://jena.apache.org)
 - [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web)
