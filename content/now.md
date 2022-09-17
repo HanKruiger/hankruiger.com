@@ -21,7 +21,7 @@ Currently, I'm doing a lot with [Django](https://www.djangoproject.com) and [Sve
 I'm reading:
 
 - *The History of Bees* by Maja Lunde
-- *Harry Potter and the Philosopher's Stone* by J.K. Rowling
+- *Harry Potter and the Chamber of Secrets* by J.K. Rowling
 
 ## Watching
 I recently watched and enjoyed:
