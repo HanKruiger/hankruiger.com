@@ -23,6 +23,10 @@ I'm reading:
 - *The History of Bees* by Maja Lunde
 - *Harry Potter and the Prisoner of Azkaban* by J.K. Rowling
 
+## Listening (podcasts)
+
+- (Dutch) An interview with Diederik Samsom about the EU, energy, and politics: [Episode link](https://pca.st/episode/f5e4910f-7bec-40f0-80e1-f5504881a85d) 
+
 ## Watching
 I recently watched and enjoyed:
 
