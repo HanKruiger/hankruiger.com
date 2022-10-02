@@ -3,7 +3,7 @@
 {% block content %}
     {{ section.content | safe }}
     {% if section.pages %}
-        <table>
+        <table class="section-index">
             <tbody>
                 {% for page in section.pages %}
                     <tr>
