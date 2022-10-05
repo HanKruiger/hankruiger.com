@@ -4,7 +4,7 @@ description = "A post where I explain a strange encounter with Python classes"
 +++
 
 Recently, I encountered a mysterious bug in my Python application.
-The cause of the bug was a mistake in my understanding of:
+The cause of the bug was my poor understanding of:
 
 - how class instances in Python initialise their attributes, and
 - how instance attributes and class attributes are resolved.
@@ -68,9 +68,11 @@ Tolkien's hobbies: ['writing', 'music']
 Elvis's hobbies: ['writing', 'music']
 ```
 
+What?! Why are both hobbies listed for both persons?
+
 ## The Misunderstanding
 
-My bug was in this statement in the `Person` class:
+My bug was rooted in this statement in the `Person` class:
 
 ```python
   hobbies = []
@@ -97,8 +99,6 @@ tolkien.hobbies is elvis.hobbies
 ```
 
 which results in `True`.
-
-So, the calls to `add_hobby` *mutated* that single list in the class attribute, resulting in all hobbies from different person instances being added to the same list.
 
 This behaviour is well documented in the [Python tutorial](https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables) which goes to show that I should have [RTFM](https://en.wikipedia.org/wiki/RTFM).
 
