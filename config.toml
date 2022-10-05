@@ -13,6 +13,10 @@ build_search_index = false
 # Whether to generate a RSS feed automatically
 generate_feed = true
 
+[markdown]
+highlight_code = true
+highlight_theme = "cheerfully-light"
+
 [extra]
 # Put all your custom variables here
 
