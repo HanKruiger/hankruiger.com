@@ -81,7 +81,7 @@ My bug was rooted in this statement in the `Person` class:
 I *thought* this statement made sure that every new `Person`'s `hobbies` attribute was set to a new empty list.[^1]
 
 However, it actually sets the *class attribute* `Person.hobbies` to an empty list.
-That is, the statement is only evaluated *once*, namely when the class is first evaluated.
+The statement is only evaluated *once*, namely when the class is first evaluated, and no new hobby lists are made when new ‘Person’ instances are made.
 
 ## Resolving Hobbies
 
@@ -92,7 +92,7 @@ So, it finds the `Person.hobbies` attribute in the class's namespace.
 
 The calls to `add_hobby` *mutated* that single list in the class attribute, resulting in all hobbies from different person instances being added to the same list.
 
-We can verify that they are the same list by evaluating the expression:
+We can verify that they resolve to the same list by evaluating the expression:
 
 ```python
 tolkien.hobbies is elvis.hobbies
@@ -103,7 +103,7 @@ which results in `True`.
 This behaviour is well documented in the [Python tutorial](https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables) which goes to show that I should have [RTFM](https://en.wikipedia.org/wiki/RTFM).
 
 *Why* it behaves like this is unclear to me (perhaps I should read some more).
-It would have made sense to me for Python to raise an `AttributeError` when trying to access an instance attribute that doesn't exist.
+It would have made sense to me for Python to raise an `AttributeError` when trying to access an instance attribute that doesn't exist on the instance.
 
 Feel free to reach out if you can enlighten me.
 
