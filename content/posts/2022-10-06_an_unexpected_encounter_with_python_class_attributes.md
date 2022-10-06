@@ -45,7 +45,7 @@ Did you spot the mistake?
 
 I had been programming in Python for more than five years, and I didn't!
 
-## Unexpected Consequences
+## Unforeseen Consequences
 
 What do you think the following two lines would print?
 
