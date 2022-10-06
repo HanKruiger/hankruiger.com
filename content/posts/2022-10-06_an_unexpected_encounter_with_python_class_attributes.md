@@ -45,7 +45,7 @@ Did you spot the mistake?
 
 I had been programming in Python for more than five years, and I didn't!
 
-## The Plot Twist
+## Unexpected Consequences
 
 What do you think the following two lines would print?
 
@@ -70,7 +70,7 @@ Elvis's hobbies: ['writing', 'music']
 
 What?! Why are both hobbies listed for both persons?
 
-## The Misunderstanding
+## The Incident
 
 My bug was rooted in this statement in the `Person` class:
 
@@ -81,7 +81,7 @@ My bug was rooted in this statement in the `Person` class:
 I *thought* this statement made sure that every new `Person`'s `hobbies` attribute was set to a new empty list.[^1]
 
 However, it actually sets the *class attribute* `Person.hobbies` to an empty list.
-The statement is only evaluated *once*, namely when the class is first evaluated, and no new hobby lists are made when new ‘Person’ instances are made.
+The statement is only evaluated *once*, namely when the class is first evaluated, and no new hobby lists are made when new `Person` instances are made.
 
 ## Resolving Hobbies
 
@@ -103,11 +103,11 @@ which results in `True`.
 This behaviour is well documented in the [Python tutorial](https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables) which goes to show that I should have [RTFM](https://en.wikipedia.org/wiki/RTFM).
 
 *Why* it behaves like this is unclear to me (perhaps I should read some more).
-It would have made sense to me for Python to raise an `AttributeError` when trying to access an instance attribute that doesn't exist on the instance.
+To me, it would make sense for Python to raise an `AttributeError` when trying to access an instance attribute that doesn't exist on the instance.
 
 Feel free to reach out if you can enlighten me.
 
-## I Stand Corrected
+## The Fix
 
 Here's a corrected version of the `Person` class:
 
