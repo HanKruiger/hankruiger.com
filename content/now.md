@@ -21,7 +21,7 @@ Currently, I'm doing a lot with [Django](https://www.djangoproject.com), [Svelte
 I'm reading:
 
 - *The History of Bees* by Maja Lunde
-- *Harry Potter and the Prisoner of Azkaban* by J.K. Rowling
+- *Harry Potter and the Goblet of Fire* by J.K. Rowling
 
 ## Listening
 Mentionable recent podcast episodes:
