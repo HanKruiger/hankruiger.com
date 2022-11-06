@@ -20,7 +20,7 @@ Currently, I'm doing a lot with [Django](https://www.djangoproject.com), [Svelte
 # Personal tech stuff
 
 - I am yet again prototyping a 2D multiplayer RPG game, this time using [Godot 4](https://godotengine.org) & Python.
-- I joined the Mastodon hype train and can be found at [mastodon.nl/@hankruiger](https://mastodon.nl/@hankruiger). You can be my first follower!
+- I joined the Mastodon hype train and can be found at [mastodon.nl/@hankruiger](https://mastodon.nl/@hankruiger).
 - Playing around with (and being amazed by) Stable Diffusion using [this Mac app](https://diffusionbee.com).
 
 ## Reading
