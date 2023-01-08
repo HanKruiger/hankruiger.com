@@ -26,8 +26,8 @@ Currently, I'm doing a lot with [Django](https://www.djangoproject.com), [Svelte
 ## Reading
 I'm reading:
 
-- *The History of Bees* by Maja Lunde
-- *Harry Potter and the Order of the Phoenix* by J.K. Rowling
+- *Harry Potter and the Half-Blood Prince* by J.K. Rowling
+- *The History of Bees* by Maja Lunde  
 
 ## Listening
 Podcasts that I enjoyed recently:
