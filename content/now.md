@@ -19,7 +19,7 @@ Currently, I'm doing a lot with [Django](https://www.djangoproject.com), [Svelte
 
 # Personal tech stuff
 
-- I recently joined Mastodon and can be found at [mastodon.nl/@hankruiger](https://mastodon.nl/@hankruiger). Looking forward to the upcoming [Ivory](https://tapbots.com/ivory/) client.
+- I recently joined Mastodon and can be found at [mastodon.nl/@hankruiger](https://mastodon.nl/@hankruiger). Using the excellent [Ivory](https://tapbots.com/ivory/) client.
 
 ## Reading
 I'm reading:
