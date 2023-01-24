@@ -19,14 +19,12 @@ Currently, I'm doing a lot with [Django](https://www.djangoproject.com), [Svelte
 
 # Personal tech stuff
 
-- I am yet again prototyping a 2D multiplayer RPG game, this time using [Godot 4](https://godotengine.org) & Python.
-- I joined the Mastodon hype train and can be found at [mastodon.nl/@hankruiger](https://mastodon.nl/@hankruiger).
-- Playing around with (and being amazed by) Stable Diffusion using [this Mac app](https://diffusionbee.com).
+- I recently joined Mastodon and can be found at [mastodon.nl/@hankruiger](https://mastodon.nl/@hankruiger). Looking forward to the upcoming [Ivory](https://tapbots.com/ivory/) client.
 
 ## Reading
 I'm reading:
 
-- *Harry Potter and the Half-Blood Prince* by J.K. Rowling
+- *Harry Potter and the Deathly Hallows* by J.K. Rowling
 - *The History of Bees* by Maja Lunde  
 
 ## Listening
@@ -39,6 +37,7 @@ Podcasts that I enjoyed recently:
 I recently watched and enjoyed:
 
 - *Borgen*
+- *The Boys*
 - *The Playlist*
 - *The Lord of the Rings: The Rings of Power*
 - *Severance*
