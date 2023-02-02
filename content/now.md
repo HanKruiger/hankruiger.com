@@ -24,13 +24,11 @@ Currently, I'm doing a lot with [Django](https://www.djangoproject.com), [Svelte
 ## Reading
 I'm reading:
 
-- *Harry Potter and the Deathly Hallows* by J.K. Rowling
 - *The History of Bees* by Maja Lunde  
 
 ## Listening
 Podcasts that I enjoyed recently:
 
-- (Dutch) A podcast series on *tech optimism*. Refreshing tech solutions to global challenges: [Podcast link](https://pca.st/podcast/dd9a7d90-fbeb-0133-9c92-59d98c6b72b8), [YouTube playlist](https://youtube.com/playlist?list=PLx-XPvxlN-7_1cfRF_KrN1dSnr2h4Fk5-)
 - (Dutch) An interview with Diederik Samsom about the EU, energy, and politics: [Episode link](https://pca.st/episode/f5e4910f-7bec-40f0-80e1-f5504881a85d) (September 23rd, 2022)
 
 ## Watching
