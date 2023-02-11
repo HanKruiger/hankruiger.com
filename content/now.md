@@ -24,6 +24,7 @@ Currently, I'm doing a lot with [Django](https://www.djangoproject.com), [Svelte
 ## Reading
 I'm reading:
 
+- *Building a Second Brain* by Tiago Forte
 - *The History of Bees* by Maja Lunde  
 
 ## Listening
