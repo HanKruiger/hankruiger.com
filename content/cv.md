@@ -18,6 +18,7 @@ Tech:
 - JavaScript
 - [Django](https://www.djangoproject.com)
 - [Svelte](https://svelte.dev/)
+- [Tailwind CSS](https://tailwindcss.com)
 - [Vue.js](https://vuejs.org/)
 - [Rust](https://www.rust-lang.org/) + [WebAssembly](https://webassembly.org/) = [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen)
 - [Apache Jena](https://jena.apache.org)

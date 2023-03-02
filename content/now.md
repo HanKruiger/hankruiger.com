@@ -11,6 +11,8 @@ Here, you can read about what I'm doing at this point in my life.
 ## General
 I live in Groningen with my girlfriend and our cat.
 
+- After reading Tiago Forte's *Building a Second Brain* I try to get into the habit of note-taking.
+
 ## Work
 I work as a *Scientist Innovator* at the [Netherlands Organisation for Applied Scientific Research (TNO)](https://www.tno.nl/en/).
 Most of my activities are related to data interoperability, front- and backend development, and ontology engineering.
@@ -19,12 +21,11 @@ Currently, I'm doing a lot with [Django](https://www.djangoproject.com), [Svelte
 
 # Personal tech stuff
 
-- I recently joined Mastodon and can be found at [mastodon.nl/@hankruiger](https://mastodon.nl/@hankruiger). Using the excellent [Ivory](https://tapbots.com/ivory/) client.
+- I recently joined Mastodon and can be found at [mastodon.nl/@hankruiger](https://mastodon.nl/@hankruiger). Using the excellent [Ivory](https://tapbots.com/ivory/) client. 
 
 ## Reading
 I'm reading:
 
-- *Building a Second Brain* by Tiago Forte
 - *Fairy Tale* by Stephen King  
 
 ## Listening
@@ -35,8 +36,7 @@ Podcasts that I enjoyed recently:
 ## Watching
 I recently watched and enjoyed:
 
-- *Borgen*
-- *The Boys*
-- *The Playlist*
+- *The Last of Us*
+- *House of the Dragon*
 - *The Lord of the Rings: The Rings of Power*
 - *Severance*
