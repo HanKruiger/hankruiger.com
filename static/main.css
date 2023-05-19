@@ -78,6 +78,10 @@ sup a {
     background-color: transparent;
 }
 
+code {
+    color: #757575;
+}
+
 /* The following is a snippet from
 https://www.getzola.org/documentation/content/syntax-highlighting/ */
 
@@ -111,4 +115,28 @@ pre mark {
 pre table {
     width: 100%;
     border-collapse: collapse;
+}
+
+article table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #717171;
+}
+
+article th, article td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #717171;
+}
+
+article th {
+    background-color: #adadad;
+}
+
+article tbody tr:nth-child(even) {
+    background-color: #c7c7c7;
+}
+
+article tbody tr:nth-child(odd) {
+    background-color: #dfdfdf;
 }
