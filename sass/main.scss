@@ -82,61 +82,31 @@ code {
     color: #757575;
 }
 
-/* The following is a snippet from
-https://www.getzola.org/documentation/content/syntax-highlighting/ */
+@import "_syntax_highlighting.scss";
+@import "_sections.scss";
 
-pre {
-    padding: 1rem;
-    overflow: auto;
-}
+article {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #717171;
 
-/* The line numbers already provide some kind of left/right padding */
-pre[data-linenos] {
-    padding: 1rem 0;
-}
-
-pre table td {
-    padding: 0;
-}
-
-/* The line number cells */
-pre table td:nth-of-type(1) {
-    text-align: center;
-    user-select: none;
-}
-
-pre mark {
-    /* If you want your highlights to take the full width. */
-    display: block;
-    /* The default background colour of a mark is bright yellow */
-    background-color: rgba(254, 252, 232, 0.9);
-}
-
-pre table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-article table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #717171;
-}
-
-article th, article td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #717171;
-}
-
-article th {
-    background-color: #adadad;
-}
-
-article tbody tr:nth-child(even) {
-    background-color: #c7c7c7;
-}
-
-article tbody tr:nth-child(odd) {
-    background-color: #dfdfdf;
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #717171;
+        }
+        
+        th {
+            background-color: #adadad;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #c7c7c7;
+        }
+        
+        tbody tr:nth-child(odd) {
+            background-color: #dfdfdf;
+        }
+    }
 }
