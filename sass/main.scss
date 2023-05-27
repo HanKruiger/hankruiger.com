@@ -26,6 +26,10 @@ footer div:last-child {
 
 header {
     border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    flex-wrap: wrap;
 }
 
 footer {
@@ -41,6 +45,12 @@ a {
 
 header a {
     padding: 0.2rem 0.5rem;
+}
+
+@-moz-document url-prefix() {
+    header a {
+        padding-top: 0.3rem;
+    }
 }
 
 header a, header a:visited {
