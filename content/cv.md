@@ -13,9 +13,9 @@ This is my public CV in reverse chronological order.
 I work in projects with applications in several industries involving data sharing and interoperability.
 
 Tech:
-- Java
 - Python
-- JavaScript
+- Java
+- JavaScript & TypeScript
 - [Django](https://www.djangoproject.com)
 - [Svelte](https://svelte.dev/)
 - [Tailwind CSS](https://tailwindcss.com)

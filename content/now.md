@@ -11,22 +11,22 @@ Here, you can read about what I'm doing at this point in my life.
 ## General
 I live in Groningen with my girlfriend and our cat.
 
-- After reading Tiago Forte's *Building a Second Brain* I try to get into the habit of note-taking.
+After reading Tiago Forte's *Building a Second Brain* I try to get into the habit of note-taking.
 
 ## Work
 I work as a *Scientist Innovator* at the [Netherlands Organisation for Applied Scientific Research (TNO)](https://www.tno.nl/en/).
-Most of my activities are related to data interoperability, front- and backend development, and ontology engineering.
+Most of my activities are related to data interoperability, front- and backend (web) development, and ontology engineering.
 
 Currently, I'm doing a lot with [Django](https://www.djangoproject.com), [Svelte](https://svelte.dev/) and the [Knowledge Engine](https://github.com/tno/knowledge-engine).
 
-# Personal tech stuff
+## Social web stuff
 
-- I recently joined Mastodon and can be found at [mastodon.nl/@hankruiger](https://mastodon.nl/@hankruiger). Using the excellent [Ivory](https://tapbots.com/ivory/) client. 
+I am on Mastodon and can be found at [mastodon.nl/@hankruiger](https://mastodon.nl/@hankruiger). Using the excellent [Ivory](https://tapbots.com/ivory/) client.
 
 ## Reading
 I'm reading:
 
-- *Fairy Tale* by Stephen King  
+- *The Name of the Wind* by Patrick Rothfuss
 
 ## Listening
 Podcasts that I enjoyed recently:
@@ -37,6 +37,5 @@ Podcasts that I enjoyed recently:
 I recently watched and enjoyed:
 
 - *The Last of Us*
-- *House of the Dragon*
-- *The Lord of the Rings: The Rings of Power*
+- *Friends* (late to the party, I know)
 - *Severance*
