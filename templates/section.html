@@ -1,5 +1,11 @@
 {% extends "index.html" %}
 
+{% block head_extra %}
+    {% if section.path == "/posts/" %}
+        <link rel="alternate" type="application/atom+xml" title="Atom feed" href="/atom.xml">
+    {% endif %}
+{% endblock head_extra %}
+
 {% block content %}
     {{ section.content | safe }}
     {% if section.pages %}
