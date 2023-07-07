@@ -27,6 +27,7 @@ I am on Mastodon and can be found at [mastodon.nl/@hankruiger](https://mastodon.
 I'm reading:
 
 - *The Name of the Wind* by Patrick Rothfuss
+- *Chaos Monkeys* by Antonio García Martínez
 
 ## Listening
 Podcasts that I enjoyed recently:
