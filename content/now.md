@@ -30,6 +30,7 @@ I'm reading:
 Podcasts that I enjoyed recently:
 
 - (Dutch) An interview with Diederik Samsom about the EU, energy, and politics: [Episode link](https://pca.st/episode/f5e4910f-7bec-40f0-80e1-f5504881a85d) (September 23rd, 2022)
+- [Soft Skills Engineering](https://softskills.audio/), a weekly advice podcast for software developers
 
 ## Watching
 I recently watched and enjoyed:
