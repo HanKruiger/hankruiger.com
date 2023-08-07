@@ -5,7 +5,7 @@ description = "How to bypass server cache with URL query component"
 
 I'm building an application that keeps track of a file that is hosted somewhere on a public web server (which is out of my control).
 
-The web server serves the file that I'm interested in, which we'll call `cool-file.txt`, along with an MD5 digest of the file called `cool-file.txt.md5`.
+The web server serves the file that I'm interested in, which we'll call `cool-file.txt`, along with an [MD5 digest](https://en.wikipedia.org/wiki/MD5) of the file called `cool-file.txt.md5`.
 This MD5 digest is like a small 'fingerprint' of the actual file.
 `cool-file.txt` could be many megabytes in size, but the fingerprint is only a few bytes.
 
