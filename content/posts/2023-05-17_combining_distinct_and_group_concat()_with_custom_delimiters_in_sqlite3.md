@@ -1,6 +1,6 @@
 +++
 title = "Combining DISTINCT and group_concat() with custom delimiters in SQLite3"
-description = "A post where I explain how DISTINCT, group_concat()"
+description = "A post where I explain how to use DISTINCT and group_concat() with custom delmiters in SQLite3"
 +++
 
 In this blog post, I'll introduce two useful tools in SQLite3: `group_concat()` and `DISTINCT`.
