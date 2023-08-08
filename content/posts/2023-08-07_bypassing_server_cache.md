@@ -33,7 +33,9 @@ Unfortunately, trying to bypass the cache with a [`"Cache-Control: no-cache"` he
 Ideally, when a server receives a request with that header included, it should disable the cache and give the latest result. But a server can choose to ignore it.
 
 ## Fix attempt #2 ✅
-I tried adding a [query component](https://www.rfc-editor.org/rfc/rfc3986.html#section-3.4) to the URL. That is, instead of
+I tried adding a [query component](https://www.rfc-editor.org/rfc/rfc3986.html#section-3.4) to the URL.
+This component is ignored by most (if not all) web servers when serving static files.
+So, instead of
 
 ```
 https://example.org/cool-file.txt.md5
