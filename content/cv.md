@@ -9,7 +9,7 @@ This is my public CV in reverse chronological order.
 
 ## Work experience
 
-### (2020 - present) Scientist Innovator at [TNO](https://www.tno.nl/)
+### (2020 - 2023) Scientist Innovator at [TNO](https://www.tno.nl/)
 I work in projects with applications in several industries involving data sharing and interoperability.
 
 Tech:
