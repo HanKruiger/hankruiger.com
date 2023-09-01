@@ -9,6 +9,10 @@ This is my public CV in reverse chronological order.
 
 ## Work experience
 
+### (2023 - present) Full Stack Developer at New Nexus Software Solutions
+I work as a full stack developer at New Nexus Software Solutions in Haren.
+
+
 ### (2020 - 2023) Scientist Innovator at [TNO](https://www.tno.nl/)
 I work in projects with applications in several industries involving data sharing and interoperability.
 

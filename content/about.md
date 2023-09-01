@@ -7,7 +7,7 @@ show_title = false
 
 My name is Han. 👋
 I am educated in Physics and Computing Science.
-I enjoy building software, and do that (and other things) at my job at TNO.
+I enjoy building software, and do that (and other things) at my job at [New Nexus](https://newnexus.nl).
 
 Do you want to know what I do **now**? Check out [my now page](/now)!
 

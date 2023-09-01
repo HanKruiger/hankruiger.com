@@ -12,10 +12,7 @@ Here, you can read about what I'm doing at this point in my life.
 I live in Groningen with my girlfriend and our cat.
 
 ## Work
-In September, I will start as a *full-stack developer* at [New Nexus](https://newnexus.nl/).
-
-Until then, I work as a *Scientist Innovator* at the [Netherlands Organisation for Applied Scientific Research (TNO)](https://www.tno.nl/en/).
-Most of my activities are related to data interoperability, front- and backend (web) development, and ontology engineering.
+In September, I started as a *full-stack developer* at [New Nexus](https://newnexus.nl/).
 
 ## Social web stuff
 
@@ -37,5 +34,6 @@ I recently watched and enjoyed:
 
 - *The Last of Us*
 - *Oppenheimer*
+- *Beef*
 - *Friends* (late to the party, I know)
 - *Severance*
