@@ -34,6 +34,6 @@ I recently watched and enjoyed:
 
 - *The Last of Us*
 - *Oppenheimer*
-- *Beef*
+- *BEEF*
 - *Friends* (late to the party, I know)
 - *Severance*
