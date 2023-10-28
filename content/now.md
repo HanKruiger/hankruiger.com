@@ -14,7 +14,7 @@ I live in Groningen with my girlfriend and our cat.
 ## Work
 In September, I started as a *full-stack developer* at [New Nexus](https://newnexus.nl/).
 
-- Learning about .NET, Azure, Nuxt and [Pinia](https://pinia.vuejs.org).
+- Learning about .NET, Azure, [Nuxt](https://nuxt.com) and [Pinia](https://pinia.vuejs.org).
 
 ## Social web stuff
 
