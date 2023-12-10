@@ -23,7 +23,7 @@ I am on Mastodon and can be found at [mastodon.nl/@hankruiger](https://mastodon.
 ## Reading
 I'm reading:
 
-- *Homo Deus* by Yuval Noah Harari
+- *Gödel, Escher, Bach: an Eternal Golden Braid* by Douglas Hofstadter
 
 ## Listening
 Podcasts that I enjoyed recently:
