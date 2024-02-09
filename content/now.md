@@ -16,7 +16,9 @@ I live in Groningen with my girlfriend and our cat.
 
 In September, I started as a *full-stack developer* at [New Nexus](https://newnexus.nl/).
 
-- Learning about .NET, Azure, [Nuxt](https://nuxt.com) and [Pinia](https://pinia.vuejs.org).
+## Personal projects
+
+- Building a multiplayer RPG game using [*Godot*](https://godotengine.org) and [*Bevy*](https://bevyengine.org). 
 
 ## Social web stuff
 
@@ -28,16 +30,11 @@ I'm reading:
 
 - *Gödel, Escher, Bach: an Eternal Golden Braid* by Douglas Hofstadter
 
-## Gaming
-
-- I recently started playing *Destiny 2*, which is fun.
-
 ## Watching
-I recently watched and enjoyed:
 
-- *Lessons in Chemistry*
+I (semi-)recently watched and enjoyed:
+
+- *Wonka*
 - *The Last of Us*
-- *Oppenheimer*
 - *The Wheel of Time*
-- *BEEF* 
 - *Severance*
