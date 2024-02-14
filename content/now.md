@@ -10,29 +10,21 @@ Here, you can read about what I'm doing at this point in my life.
 
 ## General
 
-I live in Groningen with my girlfriend and our cat.
+- I live in Groningen with my girlfriend and our cat. 
 
 ## Work
 
-In September, I started as a *full-stack developer* at [New Nexus](https://newnexus.nl/).
+- In September, I started as a *full-stack developer* at [New Nexus](https://newnexus.nl/).
 
 ## Personal projects
 
 - Building a multiplayer RPG game using [*Godot*](https://godotengine.org) and [*Bevy*](https://bevyengine.org). I occasionally share updates [over here](https://t.me/han_game_log).
 
-## Social web stuff
-
-I am on Mastodon and can be found at [mastodon.nl/@hankruiger](https://mastodon.nl/@hankruiger). Using the excellent [Ivory](https://tapbots.com/ivory/) client.
-
-## Reading
-
-I'm reading:
+## Currently reading
 
 - *Gödel, Escher, Bach: an Eternal Golden Braid* by Douglas Hofstadter
 
-## Watching
-
-I (semi-)recently watched and enjoyed:
+## Recent movie/TV recommendations
 
 - *Wonka*
 - *The Last of Us*
