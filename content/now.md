@@ -18,7 +18,7 @@ In September, I started as a *full-stack developer* at [New Nexus](https://newne
 
 ## Personal projects
 
-- Building a multiplayer RPG game using [*Godot*](https://godotengine.org) and [*Bevy*](https://bevyengine.org). 
+- Building a multiplayer RPG game using [*Godot*](https://godotengine.org) and [*Bevy*](https://bevyengine.org). I occasionally share updates [over here](https://t.me/han_game_log).
 
 ## Social web stuff
 
