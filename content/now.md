@@ -22,7 +22,7 @@ Here, you can read about what I'm doing at this point in my life.
 
 ## Currently reading
 
-- *Gödel, Escher, Bach: an Eternal Golden Braid* by Douglas Hofstadter
+- *The Three Body Problem* by Cixin Liu
 
 ## Recent movie/TV recommendations
 
