@@ -1,6 +1,7 @@
 +++
 description = "Han Kruiger's about page"
 title = "About"
+updated = 2023-09-01
 [extra]
 show_title = false
 +++
