@@ -1,6 +1,6 @@
 +++
-title = "Adding to a Notion Database from Shortcuts on iOS and iPadOS"
-description = ""
+title = "Inserting into a Notion Database from Shortcuts on iOS and iPadOS"
+description = "A short adventure into integrating with Notion's API from Shortcuts on iOS and iPadOS."
 +++
 
 For about 5 years now, I keep a log of movies I watch in a Notion database, and I wanted to make it a little easier to add an entry.
@@ -98,14 +98,14 @@ This was an easy fix, requiring the use of a *Replace Text* step in the shortcut
 The behaviour regarding hyphens [is documented somewhat](https://developers.notion.com/docs/working-with-page-content#creating-a-page-with-content), but I don't think it is very convenient.
 
 Later, I learned that this strange encounter (and my workaround) could have been prevented if I granted the *Read content* capability to my Notion integration.
-With that capability, the response from the POST request includes a `"url"` property which is exactly the URL that I want to open in the final step of the shortcut.
+With that capability, the response from the HTTP request includes a `"url"` property which is exactly the URL that I want to open in the final step of the shortcut.
 
 ## Conclusions
 
 So there you have it! I now have this shortcut on my home screen, and after tapping it I only need to enter the movie's name (and some other things that I track).
 
 My new shortcut saves me about 1 second for each entry I add.
-Making the shortcut took me about 2 hours, so I will need to watch another 7200 movies to make this adventure worth it (if time is all that matters).
+Building the shortcut took me about 2 hours, so I will need to watch another 7200 movies to make this adventure worth it (if time is all that matters).
 
 I think it's fun that I am able to automate this stuff on an iPad without writing any normal code.
 But, being used to writing code, doing it in Shortcuts is also frustrating, given all its quirks.
