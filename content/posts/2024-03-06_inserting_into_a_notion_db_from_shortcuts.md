@@ -1,0 +1,111 @@
++++
+title = "Inserting into a Notion Database from Shortcuts on iOS and iPadOS"
+description = "A short adventure into integrating with Notion's API from Shortcuts on iOS and iPadOS."
++++
+
+For about 5 years now, I keep a log of movies I watch in a Notion database, and I wanted to make it a little easier to add an entry.
+
+Initially, I would open Notion, go to the database, and add the entry.
+
+A while ago, I made a simple link opener in Shortcuts that took me to the database directly.
+This shortcut only had a single *Open URL* step that I configured to open my database's page in Notion.
+
+However, after running this shortcut, I still had to tap that *New* button to add my entry, and I had to fill in today's date, in addition to other details such as the name of the movie.
+
+Today I made this process a little easier by using the Notion API from Shortcuts on iOS and iPadOS.
+
+## Steps
+
+First off, I had to create the Notion integration on [the Notion web page for it](https://www.notion.so/my-integrations).
+Here, I could create a secret key, and give the integration the appropriate capability: *Insert content*.
+
+Then, I had to enable the integration for the specific database that I wanted it to integrate with.
+This was easily done by going to the Notion database, tapping the three dots, and adding the integration in the *Connections* section.
+
+After setting this up, I needed one more thing before creating the shortcut: The database ID.
+You can find this in the URL that you get when tapping *Copy link* on the database.
+From that URL, you need the final section of the path (before the query parameters).
+This is known as the 'page ID' of the Notion page (which in this case is a database).
+
+Finally, I could start building the shortcut.
+It contains two important steps: The HTTP request that inserts the new entry into the database, and a step to open the newly created page.
+
+To do the HTTP request, I could simply use a *Get contents of URL* step.
+I could set this step up to do a HTTP POST request to `https://api.notion.com/v1/pages`, with the appropriate headers (`Authorization` with the secret key and `Notion-Version` for the API version), and with the following JSON body:
+
+```json
+{
+  "parent": {
+    "database_id": "{the database id}"
+  },
+  "properties": {
+    "When": {
+      "date": {
+        "start": "{today's date}"
+      }
+    }
+  }
+}
+```
+
+A few clarifications:
+
+- The `"parent"` property denotes where this action will try to insert the new page in.
+- The `"properties"` property denotes the properties that the new page will have in the database. This is exactly like the column values for a row in a table.
+- `"When"` is the name of the property in my database that I use for tracking when I watched the movie. I don't use Notion's built-in `"Created time"` property because I sometimes add entries days after I have watched a movie.
+- The date itself is set to today's date in the shortcut, so that I don't have to enter it manually in Notion. More on this below.
+- In Notion, dates can optionally have an `"end"` value, which would turn them into date ranges. To denote a single date, one has to only use the `"start"` property.
+
+After all this, to open the newly created page I would only need to find out the URL of the page and open it using a *Open URL* step. (More on that below.)
+
+## Strange encounter #1 (Shortcuts bug)
+
+The first strange encounter I had was with the Shortcuts app and selecting the date format in the nested JSON object I was building.
+
+Remember that I wanted to pre-fill the date of my entry with today's date.
+I was able to use Shortcut's *Current Date* variable in the JSON object, but when trying to edit the date format (it needs to be `YYYY-MM-DD`) the dialog would bug out and take me back to some other level of the JSON object. Very annoying. (Yes, this also consistently happened after turning Shortcuts off and on again.)
+
+To work around this, I added a *Set Variable* step before the HTTP request step that set today's date into a variable.
+I *was* able to select the right format here.
+Then, I could use that variable in the JSON object. 🤷‍♂️
+
+## Strange encounter #2 (Notion page ID hyphen behaviour)
+
+After adding the (partially filled) entry to the Notion database, I wanted the shortcut to take me to the page in Notion so that I could fill out the rest of the entry.
+
+In the first step of the shortcut, I got the following JSON response from the POST request:
+
+```json
+{
+  "id": "59833787-2cf9-4fdf-8782-e53db20768a5",
+  "object": "page",
+  "request_id": "{some other id}"
+}
+```
+
+So I figured that I could just use the `"id"` property and fill it into this template and open that link:
+
+```
+https://www.notion.so/{my-workspace-id}/59833787-2cf9-4fdf-8782-e53db20768a5
+```
+
+__But__, doing it this way showed an error in Notion, and resulted in *completely breaking my Notion installation, requiring me to reinstall Notion on my device*.
+This is not great, and is clearly a bug in Notion.
+
+Granted, I made a mistake, because I first had to remove the hyphens from the ID.
+This was an easy fix, requiring the use of a *Replace Text* step in the shortcut that replaces all occurrences of `"-"` with `""`.
+
+The behaviour regarding hyphens [is documented somewhat](https://developers.notion.com/docs/working-with-page-content#creating-a-page-with-content), but I don't think it is very convenient.
+
+Later, I learned that this strange encounter (and my workaround) could have been prevented if I granted the *Read content* capability to my Notion integration.
+With that capability, the response from the HTTP request includes a `"url"` property which is exactly the URL that I want to open in the final step of the shortcut.
+
+## Conclusions
+
+So there you have it! I now have this shortcut on my home screen, and after tapping it I only need to enter the movie's name (and some other things that I track).
+
+My new shortcut saves me about 1 second for each entry I add.
+Building the shortcut took me about 2 hours, so I will need to watch another 7200 movies to make this adventure worth it (if time is all that matters).
+
+I think it's fun that I am able to automate this stuff on an iPad without writing any normal code.
+But, being used to writing code, doing it in Shortcuts is also frustrating, given all its quirks.
