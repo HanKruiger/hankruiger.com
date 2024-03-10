@@ -8,7 +8,7 @@ For about 5 years now, I keep a log of movies I watch in a Notion database, and 
 Initially, I would open Notion, go to the database, and add the entry.
 
 A while ago, I made a simple link opener in Shortcuts that took me to the database directly.
-This shortcut only had a single *Open URL* step that I configured to open my database's page in Notion.
+This shortcut only had a single *Open URL* action that I configured to open my database's page in Notion.
 
 However, after running this shortcut, I still had to tap that *New* button to add my entry, and I had to fill in today's date, in addition to other details such as the name of the movie.
 
@@ -28,10 +28,10 @@ From that URL, you need the final section of the path (before the query paramete
 This is known as the 'page ID' of the Notion page (which in this case is a database).
 
 Finally, I could start building the shortcut.
-It contains two important steps: The HTTP request that inserts the new entry into the database, and a step to open the newly created page.
+It contains two important actions: The HTTP request that inserts the new entry into the database, and a step to open the newly created page.
 
-To do the HTTP request, I could simply use a *Get contents of URL* step.
-I could set this step up to do a HTTP POST request to `https://api.notion.com/v1/pages`, with the appropriate headers (`Authorization` with the secret key and `Notion-Version` for the API version), and with the following JSON body:
+To do the HTTP request, I could simply use a *Get contents of URL* action.
+I could configure this action to do a HTTP POST request to `https://api.notion.com/v1/pages`, with the appropriate headers (`Authorization` with the secret key and `Notion-Version` for the API version), and with the following JSON body:
 
 ```json
 {
@@ -56,7 +56,7 @@ A few clarifications:
 - The date itself is set to today's date in the shortcut, so that I don't have to enter it manually in Notion. More on this below.
 - In Notion, dates can optionally have an `"end"` value, which would turn them into date ranges. To denote a single date, one has to only use the `"start"` property.
 
-After all this, to open the newly created page I would only need to find out the URL of the page and open it using a *Open URL* step. (More on that below.)
+After all this, to open the newly created page I would only need to find out the URL of the page and open it using a *Open URL* action. (More on that below.)
 
 ## Strange encounter #1 (Shortcuts bug)
 
@@ -65,7 +65,7 @@ The first strange encounter I had was with the Shortcuts app and selecting the d
 Remember that I wanted to pre-fill the date of my entry with today's date.
 I was able to use Shortcut's *Current Date* variable in the JSON object, but when trying to edit the date format (it needs to be `YYYY-MM-DD`) the dialog would bug out and take me back to some other level of the JSON object. Very annoying. (Yes, this also consistently happened after turning Shortcuts off and on again.)
 
-To work around this, I added a *Set Variable* step before the HTTP request step that set today's date into a variable.
+To work around this, I added a *Set Variable* action before the HTTP request that set today's date into a variable.
 I *was* able to select the right format here.
 Then, I could use that variable in the JSON object. 🤷‍♂️
 
@@ -73,7 +73,7 @@ Then, I could use that variable in the JSON object. 🤷‍♂️
 
 After adding the (partially filled) entry to the Notion database, I wanted the shortcut to take me to the page in Notion so that I could fill out the rest of the entry.
 
-In the first step of the shortcut, I got the following JSON response from the POST request:
+From the *Get contents of URL* action of the shortcut, I got the following JSON response from the POST request:
 
 ```json
 {
@@ -93,12 +93,12 @@ __But__, doing it this way showed an error in Notion, and resulted in *completel
 This is not great, and is clearly a bug in Notion.
 
 Granted, I made a mistake, because I first had to remove the hyphens from the ID.
-This was an easy fix, requiring the use of a *Replace Text* step in the shortcut that replaces all occurrences of `"-"` with `""`.
+This was an easy fix, requiring the use of a *Replace Text* action in the shortcut that replaces all occurrences of `"-"` with `""`.
 
 The behaviour regarding hyphens [is documented somewhat](https://developers.notion.com/docs/working-with-page-content#creating-a-page-with-content), but I don't think it is very convenient.
 
 Later, I learned that this strange encounter (and my workaround) could have been prevented if I granted the *Read content* capability to my Notion integration.
-With that capability, the response from the HTTP request includes a `"url"` property which is exactly the URL that I want to open in the final step of the shortcut.
+With that capability, the response from the HTTP request includes a `"url"` property which is exactly the URL that I want to open in the final action of the shortcut.
 
 ## Conclusions
 
