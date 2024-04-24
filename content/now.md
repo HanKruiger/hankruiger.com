@@ -1,7 +1,7 @@
 +++
 description = "Han Kruiger's now page"
 title = "Now"
-updated = 2024-03-22
+updated = 2024-04-24
 [extra]
 show_title = false
 +++
