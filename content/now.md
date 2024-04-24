@@ -23,7 +23,7 @@ Here, you can read about what I'm doing at this point in my life.
 
 ## Recent movie/TV recommendations
 
-- *Avatar: The Last Airbender* (the animated series)
+- *Shōgun*
 - *Wonka*
 - *The Last of Us*
 - *Severance*
