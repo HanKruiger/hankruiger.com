@@ -19,7 +19,7 @@ Here, you can read about what I'm doing at this point in my life.
 
 ## Currently reading
 
-- *The Dark Forest* by Cixin Liu
+- *Death’s End* by Cixin Liu
 
 ## Recent movie/TV recommendations
 
