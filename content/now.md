@@ -1,7 +1,7 @@
 +++
 description = "Han Kruiger's now page"
 title = "Now"
-updated = 2024-05-08
+updated = 2024-06-01
 [extra]
 show_title = false
 +++
@@ -19,12 +19,12 @@ Here, you can read about what I'm doing at this point in my life.
 
 ## Currently reading
 
-- *Death’s End* by Cixin Liu
 - *The Hobbit* by J.R.R. Tolkien
 
 ## Recent movie/TV recommendations
 
 - *Shōgun*
+- *Baby Reindeer*
 - *Wonka*
 - *The Last of Us*
 - *Severance*
