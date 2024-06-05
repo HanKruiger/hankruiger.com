@@ -5,8 +5,11 @@
 {% block description %}{{page.description}}{% endblock description %}
 
 {% block content %}
-    <article>
+    <article class="max-w-xl mx-auto">
         <div class="prose prose-indigo">
+            {% if page.date %}
+                <p><i>{{ page.date | date(format="%B %e, %Y") }}</i></p>
+            {% endif %}
             {% if page.extra.show_title | default(value=true) %}
                 <h1>{{ page.title }}</h1>
             {% endif %}

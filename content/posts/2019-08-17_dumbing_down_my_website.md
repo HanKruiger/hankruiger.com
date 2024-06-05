@@ -17,4 +17,4 @@ I decided not to use any of the themes that come with Zola, and instead use my o
 
 If you're interested, the source code of my website is public, and can be seen in [this repository](https://github.com/HanKruiger/hankruiger.com).
 
-[^1]: I use [Netlify](https://netlify.com/) for this. It's free. For my domain name, I used [Hover](https://hover.com/), which is not free, but really easy to use.
+<span id="1">1</span>: I use [Netlify](https://netlify.com/) for this. It's free. For my domain name, I used [Hover](https://hover.com/), which is not free, but really easy to use.

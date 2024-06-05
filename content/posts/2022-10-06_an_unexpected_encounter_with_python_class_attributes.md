@@ -124,4 +124,5 @@ In this version, the `hobbies` attribute is assigned to the instance's namespace
 
 This way, every person instance gets its own list of hobbies in its instance attributes.
 
-[^1]: This is vaguely how it works in some other programming languages like Java and PHP.
+<span id="1">1</span>: This is vaguely how it works in some other programming languages like Java and PHP.
+

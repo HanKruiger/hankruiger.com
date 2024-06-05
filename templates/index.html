@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="Description" content="{% block description %}{{section.description}}{% endblock description %}">
         <link rel="shortcut icon" href="/favicon.jpg" type="image/jpg">
         <script src="/scripts/themer.js"></script>
-        <link rel="stylesheet" href="{{ get_url(path="styles/styles.css") | safe }}" />
+        <link rel="stylesheet" href="/styles/styles.css"/>
         {% if get_env(name="ENV", default="dev") == "production" %}
             <script async src="https://analytics.umami.is/script.js" data-website-id="9d20cf05-ad14-4268-b17d-8440f4cd8503"></script>
         {% endif %}
@@ -15,11 +15,21 @@
         {% endblock %}
         <title>Han | {% block title %}{{ section.title }}{% endblock title %}</title>
     </head>
-    <body>
+    <body class="flex flex-col h-full">
         {% include "header.html" %}
-        <main>
+        <main class="flex-[1_0_auto] pt-4">
             {% block content %}
-                {{ section.content | safe }}
+                <article class="max-w-xl mx-auto">
+                    <div class="prose prose-indigo">
+                        {% if section.extra.show_title | default(value=true) %}
+                            <h1>{{ section.title }}</h1>
+                        {% endif %}
+                        {% if section.extra.updated %}
+                            <p><i>This page was last updated on {{ section.extra.updated | date(format="%B %e, %Y") }}.</i></p>
+                        {% endif %}
+                        {{ section.content | safe }}
+                    </div>
+                </article>
             {% endblock content %}
         </main>
         {% include "footer.html" %}
