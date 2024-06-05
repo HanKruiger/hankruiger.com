@@ -5,7 +5,7 @@
 {% block description %}{{page.description}}{% endblock description %}
 
 {% block content %}
-    <article class="max-w-xl mx-auto">
+    <article class="max-w-xl mx-auto px-4">
         <div class="prose prose-indigo">
             {% if page.date %}
                 <p><i>{{ page.date | date(format="%B %e, %Y") }}</i></p>
