@@ -1,11 +1,10 @@
 +++
-title = "CV"
+title = "Han's CV"
 description = "Han Kruiger's public CV"
+updated = 2023-09-01
 [extra]
-show_title = false
+show_title = true
 +++
-
-This is my public CV in reverse chronological order.
 
 ## Work experience
 

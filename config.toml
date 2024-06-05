@@ -2,10 +2,10 @@
 base_url = "https://www.hankruiger.com"
 
 title = "Han Kruiger"
+author = "Han Kruiger"
 
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = false
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
@@ -17,7 +17,7 @@ compile_sass = true
 
 [markdown]
 highlight_code = true
-highlight_theme = "cheerfully-light"
+highlight_theme = "nord"
 external_links_target_blank = true
 
 [extra]
@@ -27,7 +27,6 @@ external_links_target_blank = true
 # (In addition to a link to the base URL.)
 header_sections = [
     { path = '/posts', title = 'Posts' },
-    { path = '/about', title = 'About' },
     { path = '/cv', title = 'CV' },
     { path = '/now', title = 'Now' }
 ]
