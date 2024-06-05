@@ -2,6 +2,7 @@
 base_url = "https://www.hankruiger.com"
 
 title = "Han Kruiger"
+author = "Han Kruiger"
 
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola

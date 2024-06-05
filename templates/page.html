@@ -6,13 +6,14 @@
 
 {% block content %}
     <article>
-        {% if page.updated %}
-            <p><i>This page was last updated on {{ page.updated | date(format="%B %e, %Y") }}.</i></p>
-        {% endif %}
-        {% if page.extra.show_title | default(value=true) %}
-            <h1>{{ page.title }}</h1>
-        {% endif %}
-
-        {{ page.content | safe }}
+        <div class="prose prose-indigo">
+            {% if page.extra.show_title | default(value=true) %}
+                <h1>{{ page.title }}</h1>
+            {% endif %}
+            {% if page.updated %}
+                <p><i>This page was last updated on {{ page.updated | date(format="%B %e, %Y") }}.</i></p>
+            {% endif %}
+            {{ page.content | safe }}
+        </div>
     </article>
 {% endblock content %}
