@@ -1,6 +1,9 @@
+const LIGHT = 'light';
+const DARK = 'dark';
+
 function setTheme() {
-    const dark = localStorage.getItem('theme') === 'dark' ?? false;
-    document.documentElement.setAttribute("data-theme", dark ? 'dark' : 'light');
+    const dark = localStorage.getItem('theme') === DARK ?? false;
+    document.documentElement.setAttribute("data-theme", dark ? DARK : LIGHT);
     const controller = document.querySelector('input.theme-controller');
     if (controller) {
         controller.checked = dark;
@@ -15,11 +18,11 @@ function listenForThemeChanges() {
     const controller = document.querySelector('input.theme-controller')
     controller?.addEventListener('input', e => {
         const dark = e.target.checked;
-        document.documentElement.setAttribute("data-theme", dark ? 'dark' : 'light');
+        document.documentElement.setAttribute("data-theme", dark ? DARK : LIGHT);
         if (dark) {
-            localStorage.setItem('theme', 'dark');
+            localStorage.setItem('theme', DARK);
         } else {
-            localStorage.setItem('theme', 'light');
+            localStorage.setItem('theme', LIGHT);
         }
     });
 }
