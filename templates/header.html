@@ -3,7 +3,7 @@
         <ul class="menu menu-vertical sm:menu-horizontal flex-1 gap-2">
             {% if current_path == "/" %}
                 <li class="disabled">
-                    <a href="/" class="bg-secondary text-neutral-content">
+                    <a href="/" class="bg-secondary text-base-content">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                         </svg>
@@ -11,7 +11,7 @@
                 </li>
             {% else %}
                 <li>
-                    <a href="/" class="text-neutral-content">
+                    <a href="/" class="text-base-content">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                         </svg>
@@ -21,11 +21,11 @@
             {% for header_section in config.extra.header_sections %}
                 {% if current_path is starting_with(header_section.path) %}
                     <li class="disabled">
-                        <a href="{{ header_section.path }}" class="bg-secondary text-neutral-content">{{ header_section.title }}</a>
+                        <a href="{{ header_section.path }}" class="bg-secondary text-base-content">{{ header_section.title }}</a>
                     </li>
                 {% else %}
                     <li>
-                        <a href="{{ header_section.path }}" class="text-neutral-content">{{ header_section.title }}</a>
+                        <a href="{{ header_section.path }}" class="text-base-content">{{ header_section.title }}</a>
                     </li>
                 {% endif %}
             {% endfor %}
