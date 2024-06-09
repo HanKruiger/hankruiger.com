@@ -17,7 +17,7 @@ Here, you can read about what I'm doing at this point in my life.
 
 ## Currently reading
 
-- *Morele Ambitie* by Rutger Bregman
+- *The Ministry for the Future* by Kim Stanley Robinson
 
 ## Recent movie/TV recommendations
 
