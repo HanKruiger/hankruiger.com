@@ -1,7 +1,7 @@
 {
   "name": "hankruiger.com",
   "scripts": {
-    "build": "NODE_ENV=production npx tailwindcss -i styles/styles.css -o static/styles/styles.css"
+    "build": "NODE_ENV=production npx tailwindcss -i styles/styles.css -o static/styles/styles.css --minify"
   },
   "author": "Han Kruiger",
   "license": "MIT",
