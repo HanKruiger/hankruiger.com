@@ -10,14 +10,14 @@
                         <li><a
                             href="{{ header_section.path }}"
                             {% if current_path is starting_with(header_section.path) %}
-                                class="underline font-black"
+                                class="underline"
                             {% endif %}
                         >{{ header_section.title }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
             {% if current_path == "/" %}
-                <a class="btn btn-ghost text-xl underline font-black" href="/">Home</a>
+                <a class="btn btn-ghost text-xl underline" href="/">Home</a>
             {% else %}
                 <a class="btn btn-ghost text-xl" href="/">Home</a>
             {% endif %}
@@ -26,7 +26,7 @@
                     <li><a
                         href="{{ header_section.path }}"
                         {% if current_path is starting_with(header_section.path) %}
-                            class="underline font-black"
+                            class="underline"
                         {% endif %}
                     >{{ header_section.title }}</a></li>
                 {% endfor %}
