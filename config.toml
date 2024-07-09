@@ -8,7 +8,7 @@ author = "Han Kruiger"
 build_search_index = false
 
 # Whether to generate a RSS feed automatically
-generate_feed = true
+generate_feeds = true
 
 [markdown]
 highlight_code = true
