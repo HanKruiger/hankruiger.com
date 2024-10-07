@@ -1,7 +1,7 @@
 +++
 description = "Han Kruiger's now page"
 title = "What is Han doing right now?"
-updated = 2024-07-24
+updated = 2024-10-07
 +++
 
 This is my [now page](https://nownownow.com/about).
