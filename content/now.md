@@ -21,7 +21,7 @@ Here, you can read about what I'm doing at this point in my life.
 
 ## Currently reading
 
-- *The Ministry for the Future* by Kim Stanley Robinson
+- *On the Calculation of Volume I* (*Om udregning af rumfang I*) by Solvej Balle
 
 ## Recent movie/TV recommendations
 
