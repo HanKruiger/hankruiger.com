@@ -1,7 +1,7 @@
 +++
 description = "Han Kruiger's now page"
 title = "What is Han doing right now?"
-updated = 2024-10-07
+updated = 2024-10-17
 +++
 
 This is my [now page](https://nownownow.com/about).
@@ -21,12 +21,13 @@ Here, you can read about what I'm doing at this point in my life.
 
 ## Currently reading
 
-- *On the Calculation of Volume I* (*Om udregning af rumfang I*) by Solvej Balle
+- *On the Calculation of Volume II* (*Om udregning af rumfang II*) by Solvej Balle
 
-## Recent movie/TV recommendations
+## Movie/TV recommendations
 
+- *Silicon Valley*
+- *The Leftovers*
 - *Shōgun*
 - *Baby Reindeer*
-- *Wonka*
 - *The Last of Us*
 - *Severance*
