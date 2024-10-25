@@ -1,0 +1,3 @@
+- [ ] Make sure /about redirects to /
+- [x] Header: underline current page
+- [ ] Posts index: format date nicer

@@ -1,27 +1,10 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./templates/**/*.html'],
+export default {
+  content: [],
   theme: {
     extend: {},
   },
-  daisyui: {
-    themes: [
-      {
-        light: {
-          ...require('daisyui/src/theming/themes')['fantasy'],
-        }
-      },
-      {
-        dark: {
-          ...require('daisyui/src/theming/themes')['forest'],
-          'base-300': 'rgb(38, 38, 38)',
-          "--rounded-btn": "0.5rem",
-        },
-      }
-    ],
-  },
   plugins: [
     require('@tailwindcss/typography'),
-    require('daisyui'),
   ],
 }

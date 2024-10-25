@@ -1,8 +1,0 @@
-+++
-title = "Kapitza's Pendulum"
-description = "Post about Kapitza's Pendulum"
-+++
-
-When you hold a pendulum upright—with its mass above the pivot point—it will tumble down, right?
-
-Well, if you vertically shake it at [just the right frequency](https://en.wikipedia.org/wiki/Kapitza%27s_pendulum#Equilibrium_positions) it won't, and [this simulation](https://demos.hankruiger.com/inverted-pendulum) demonstrates that!
