@@ -1,6 +1,7 @@
 ---
 title: "Posts"
 sort_by: "date"
+hideTitle: true
 description: "Index page with posts by Han Kruiger"
 ---
 

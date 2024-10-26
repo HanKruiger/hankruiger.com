@@ -1,18 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  compatibilityDate: '2024-10-25',
   modules: ['@nuxt/content', '@nuxt/ui', '@nuxtjs/tailwindcss'],
-
-  content: {
-    highlight: {
-      theme: "one-dark-pro",
-      langs: [
-        'python',
-        'sql',
-        'json',
-      ]
-    }
-  },
 
   routeRules: {
     '/': { prerender: true }
@@ -35,5 +25,17 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2024-10-25'
-})
+  content: {
+    navigation: {
+      fields: ['created'],
+    },
+    highlight: {
+      theme: "one-dark-pro",
+      langs: [
+        'python',
+        'sql',
+        'json',
+      ]
+    }
+  },
+});
