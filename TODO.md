@@ -1,3 +1,5 @@
-- [ ] Make sure /about redirects to /
+- [x] Make sure /about redirects to /
 - [x] Header: underline current page
-- [ ] Posts index: format date nicer
+- [x] Posts index: format date nicer
+- [x] Umami analytics
+- [x] Make footnotes work

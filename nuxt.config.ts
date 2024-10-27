@@ -1,3 +1,14 @@
+const umamiWebsiteId = process.env['UMAMI_WEBSITE_ID'];
+
+const productionScripts = [];
+if (umamiWebsiteId) {
+  productionScripts.push({
+    async: true,
+    src: 'https://analytics.umami.is/script.js',
+    'data-website-id': umamiWebsiteId,
+  });
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -5,7 +16,10 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxt/ui', '@nuxtjs/tailwindcss'],
 
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
+
+    // `/about` no longer exists; redirects to `/`
+    '/about': { redirect: '/' },
   },
 
   app: {
@@ -38,4 +52,12 @@ export default defineNuxtConfig({
       ]
     }
   },
+
+  $production: {
+    app: {
+      head: {
+        script: productionScripts
+      }
+    }
+  }
 });
