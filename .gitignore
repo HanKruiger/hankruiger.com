@@ -1,4 +1,9 @@
-public
-*.DS_Store
 node_modules
-static/styles/*
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.data
+.env
+dist

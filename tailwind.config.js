@@ -1,27 +1,25 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./templates/**/*.html'],
+export default {
+  content: [],
   theme: {
-    extend: {},
-  },
-  daisyui: {
-    themes: [
-      {
-        light: {
-          ...require('daisyui/src/theming/themes')['fantasy'],
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            // override typography's "`", which is added before
+            // & after inline code elements.
+            'code::before': {
+              content: '',
+            },
+            'code::after': {
+              content: '',
+            },
+          }
         }
-      },
-      {
-        dark: {
-          ...require('daisyui/src/theming/themes')['forest'],
-          'base-300': 'rgb(38, 38, 38)',
-          "--rounded-btn": "0.5rem",
-        },
       }
-    ],
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require('daisyui'),
   ],
 }

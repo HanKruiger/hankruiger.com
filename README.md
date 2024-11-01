@@ -6,14 +6,14 @@ The `content` folder contains most of the content, in Markdown format.
 
 ## How to test/build?
 
-Testing and building requires [`zola`](https://www.getzola.org).
+Testing and building requires Node.js and pnpm.
 
 To test the website locally:
 ```
-zola serve
+pnpm run dev
 ```
 
 To build the website locally:
 ```
-zola build
+pnpm run build
 ```
