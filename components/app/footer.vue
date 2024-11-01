@@ -8,19 +8,23 @@ const socialLinks = [
   {
     label: "GitLab",
     to: "https://gitlab.com/HanKruiger",
+    target: "_blank",
   },
   {
     label: "GitHub",
     to: "https://github.com/HanKruiger",
+    target: "_blank",
   },
   {
     label: "Mastodon",
     to: "https://mastodon.nl/@hankruiger",
     rel: "me",
+    target: "_blank",
   },
   {
     label: "LinkedIn",
     to: "https://www.linkedin.com/in/hankruiger/",
+    target: "_blank",
   },
 ];
 
@@ -31,9 +35,9 @@ const year = new Date().getFullYear();
 <template>
   <footer class="flex flex-col gap-8 py-4 items-center bg-slate-300 dark:bg-slate-800 border-t border-gray-200 dark:border-gray-800">
     <div class="flex flex-row max-w-lg w-full flex-wrap gap-6">
-      <ULink v-for="link in socialLinks" class="flex-1 font-medium underline">
+      <a v-for="link in socialLinks" :href="link.to" :rel="link.rel" :target="link.target" class="flex-1 font-medium underline">
         {{ link.label }}
-      </ULink>
+      </a>
     </div>
     <aside>
       <p>
