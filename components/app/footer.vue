@@ -33,15 +33,15 @@ const year = new Date().getFullYear();
 </script>
 
 <template>
-  <footer class="flex flex-col gap-8 py-4 items-center bg-slate-300 dark:bg-slate-800 border-t border-gray-200 dark:border-gray-800">
-    <div class="flex flex-row max-w-lg w-full flex-wrap gap-6">
+  <footer class="flex flex-col gap-8 p-4 items-center bg-slate-300 dark:bg-slate-800 border-t border-gray-200 dark:border-gray-800">
+    <div class="flex flex-row max-w-lg w-full flex-wrap gap-4 justify-around">
       <a v-for="link in socialLinks" :href="link.to" :rel="link.rel" :target="link.target" class="flex-1 font-medium underline">
         {{ link.label }}
       </a>
     </div>
     <aside>
       <p>
-        Want to fix a typo? <ULink to="https://github.com/HanKruiger/hankruiger.com/issues" class="font-medium underline">Let me know!</ULink>
+        Want to fix a typo? <ULink to="https://github.com/HanKruiger/hankruiger.com/issues" target="_blank" class="font-medium underline">Let me know!</ULink>
       </p>
     </aside>
     <aside>
