@@ -25,7 +25,8 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        { rel: 'shortcut icon', type: 'image/jpg', href: '/favicon.jpg' }
+        { rel: 'shortcut icon', type: 'image/jpg', href: '/favicon.jpg' },
+        { rel: 'alternate', type: 'application/atom+xml', title: 'Feed', href: '/atom.xml'},
       ],
       htmlAttrs: {
         class: "h-full"
@@ -58,6 +59,12 @@ export default defineNuxtConfig({
       head: {
         script: productionScripts
       }
+    }
+  },
+
+  nitro: {
+    prerender: {
+      routes: ['/atom.xml']
     }
   }
 });
