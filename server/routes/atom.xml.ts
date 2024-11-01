@@ -2,6 +2,9 @@ import { serverQueryContent } from '#content/server';
 import { Feed } from 'feed';
 import { MarkdownNode, MarkdownRoot } from '@nuxt/content';
 
+// get base URL from Netlify env variables
+const baseUrl = (process.env.ENV === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) || 'http://localhost:3000';
+
 const BLOG_LANGUAGE = "en";
 const AUTHOR_NAME = "Han Kruiger";
 const AUTHORS = [{ name: AUTHOR_NAME } ];
@@ -10,9 +13,6 @@ const BLOG_TITLE = "Han's blog";
 // this solution for getting a feed is from https://cmpadden.github.io/articles/nuxt-content-rss-feed
 
 export default defineEventHandler(async (event) => {
-    const url = getRequestURL(event)
-
-    const baseUrl = url.origin;
     const atomLink = `${baseUrl}/atom.xml`;
 
     const feed = new Feed({
