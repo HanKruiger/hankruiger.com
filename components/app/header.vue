@@ -13,7 +13,7 @@ const links = computed(() => {
 </script>
 
 <template>
-  <header class="flex flex-row-reverse flex-wrap p-1 items-center bg-slate-300 dark:bg-slate-800 border-b border-gray-200 dark:border-gray-800">
+  <header class="flex flex-row-reverse flex-wrap py-1 px-2 items-center bg-slate-300 dark:bg-slate-800 border-b border-gray-200 dark:border-gray-800">
     <ToggleDarkMode />
     <UHorizontalNavigation class="w-fit grow" :links="links" />
   </header>
