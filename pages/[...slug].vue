@@ -40,7 +40,7 @@ function ensureTrailingSlash(path: string) {
     <div class="flex flex-col gap-4">
       <ULink v-for="post in list" :to="post._path">
         <UCard>
-          <span class="underline font-bold">
+          <span class="underline font-medium text-xl">
             {{ post.title }}
           </span>
           <template #footer v-if="post.created">
