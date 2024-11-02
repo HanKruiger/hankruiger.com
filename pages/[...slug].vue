@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content';
+import dayjs from 'dayjs';
 
 const route = useRoute()
 const { data: page } = await useAsyncData(
@@ -30,6 +31,7 @@ function ensureTrailingSlash(path: string) {
 <template>
   <article class="prose md:prose-xl dark:prose-invert">
     <h1 v-if="!hideTitle">{{ page!.title }}</h1>
+    <p class="italic" v-if="page!.updated">This page was last updated {{ dayjs(page!.updated).format('MMMM D, YYYY') }}.</p>
     <ContentDoc />
   </article>
   <ContentList
