@@ -2,6 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -11,10 +12,9 @@
     "@nuxt/content": "^2.13.4",
     "@nuxt/ui": "^2.18.7",
     "@nuxtjs/tailwindcss": "^6.12.2",
-    "nuxt": "^3.13.2"
-  },
-  "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
-    "feed": "^4.2.2"
+    "dayjs": "^1.11.13",
+    "feed": "^4.2.2",
+    "nuxt": "^3.13.2"
   }
 }
