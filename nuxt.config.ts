@@ -44,16 +44,17 @@ export default defineNuxtConfig({
   },
 
   content: {
-    navigation: {
-      fields: ['created'],
-    },
-    highlight: {
-      theme: "one-dark-pro",
-      langs: [
-        'python',
-        'sql',
-        'json',
-      ]
+    build: {
+      markdown: {
+        highlight: {
+          theme: "one-dark-pro",
+          langs: [
+            'python',
+            'sql',
+            'json',
+          ]
+        }
+      }
     }
   },
 

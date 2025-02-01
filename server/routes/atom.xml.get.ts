@@ -1,6 +1,4 @@
-import { serverQueryContent } from '#content/server';
 import { Feed } from 'feed';
-import { MarkdownNode, MarkdownRoot } from '@nuxt/content';
 
 // get base URL from Netlify env variables
 const baseUrl = (process.env.ENV === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) || 'http://localhost:3000';
@@ -10,7 +8,7 @@ const AUTHOR_NAME = "Han Kruiger";
 const AUTHORS = [{ name: AUTHOR_NAME } ];
 const BLOG_TITLE = "Han's blog";
 
-// this solution for getting a feed is from https://cmpadden.github.io/articles/nuxt-content-rss-feed
+// this solution for getting a feed is based on https://cmpadden.github.io/articles/nuxt-content-rss-feed
 
 export default defineEventHandler(async (event) => {
     const atomLink = `${baseUrl}/atom.xml`;
@@ -30,17 +28,17 @@ export default defineEventHandler(async (event) => {
       author: AUTHORS[0]
     });
 
-    const articles = await serverQueryContent(event, '/posts/').find();
+    const articles = await queryCollection(event, 'posts').where('path', '<>', '/posts').all();
 
     for (const article of articles) {
       feed.addItem({
-        content: article.body ? renderRootToText(article.body!) : "",
+        content: article.body ? renderBodyToHtml(article.body as unknown as Body) : "",
         title: article.title ? article.title : "Missing Title",
-        id: `${baseUrl}${article._path}/`,
-        link: `${baseUrl}${article._path}/`,
+        id: `${baseUrl}${article.path}/`,
+        link: `${baseUrl}${article.path}/`,
         description: article.description,
         author: AUTHORS,
-        date: new Date(article.updated ?? article.created),
+        date: article.updated ? new Date(article.updated) : new Date(article.created),
         published: new Date(article.created),
       });
     };
@@ -50,22 +48,78 @@ export default defineEventHandler(async (event) => {
     return feed.atom1();
 });
 
-const renderRootToText = (node: MarkdownRoot): string => {
-  return node.children.map(renderToText).join("");
+
+// This is the backward engineered type (the `MarkDownRoot` type was not correct)
+
+type ContentItem = string | [string, object, ...ContentItem[]];
+
+type Body = {
+  type: 'minimal',
+  value: ContentItem[],
 }
 
-// from: https://github.com/nuxt/content/issues/2019#issuecomment-1519039868
-// I should keep track of this issue for a better solution.
-const renderToText = (node: MarkdownNode): string => {
-  if (node.type === "text") {
-    return node.value!;
+const renderBodyToHtml = (body: Body): string => {
+  if (body.type !== 'minimal') throw new Error('Unexpected non-"minimal" body type.');
+  
+  return body.value.map(renderToText).join("");
+}
+
+const renderToText = (content: ContentItem): string => {
+  if (typeof content == "string") {
+    return content;
   }
 
-  if (!node.children?.length) {
-    return `<${node.tag}>`;
+  const tag = content[0];
+  const attrs = content[1] as any;
+  const children = content.slice(2) as ContentItem[];
+
+  // in the footnote in the article, link using
+  const footnoteAnchor = tag === "a"
+    && Object.keys(attrs).includes("dataFootnoteRef")
+    && Object.keys(attrs).includes("href");
+  if (footnoteAnchor) {
+    attrs.href = (attrs.href as string).replace('#user-content-fn-', '#fn:');
   }
 
-  return `<${node.tag}>${
-    node.children?.map(renderToText).join("") || ""
-  }</${node.tag}>`;
+  const footnoteLi = tag === "li"
+    && Object.keys(attrs).includes("id")
+    && (attrs.id as string).startsWith('user-content-fn-')
+  if (footnoteLi) {
+    attrs.id = attrs.id.replace('user-content-fn-', 'fn:')
+  }
+
+  // in the backlink IN the footnote, link to #fnref:
+  const footnoteAnchorBacklink = tag === "a"
+    && Object.keys(attrs).includes("dataFootnoteBackref")
+    && Object.keys(attrs).includes("href");
+  if (footnoteAnchorBacklink) {
+    attrs.href = (attrs.href as string).replace('#user-content-fnref-', '#fnref:');
+  }
+
+  const footnoteSup = tag === "sup"
+    && Object.keys(children[0][1]).includes("dataFootnoteRef")
+    && Object.keys(children[0][1]).includes("id");
+  if (footnoteSup) {
+    attrs.id = ((children[0][1] as any).id as string).replace('user-content-fnref-', 'fnref:');
+  }
+
+  const footnoteList = tag === "ol"
+    && ((children[0][1] as any).id as string)?.startsWith('user-content-fn-')
+  if (footnoteList) {
+    attrs.class = "footnotes";
+  }
+
+  let attrsString = Object.entries(attrs).map(([k, v]) => {
+    if (footnoteAnchor && k === 'id') return null;
+    const valString: string = Array.isArray(v) ? v.join(" ") : v as string;
+    return `${k}="${valString}"` // TODO: Do I need to escape "'s here?
+  }).filter(a => a !== null).join(' ')
+
+  if (footnoteAnchor) {
+    attrsString += ' rel="footnote"';
+  }
+
+  return `<${tag} ${attrsString}>${
+    children.map(renderToText).join("")
+  }</${tag}>`;
 };
