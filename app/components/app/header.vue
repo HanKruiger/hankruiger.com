@@ -1,14 +1,25 @@
 <script setup lang="ts">
-const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
-const route = useRoute();
+const router = useRouter();
 
-const links = computed(() => {
-  return navigation.value?.map(l => ({
-    to: l._path,
-    label: l.title,
-    active: l._path == '/' ? route.path == '/' : route.path.startsWith(l._path),
-  })) ?? [];
-});
+const links = computed(() => [
+  {
+    to: '/',
+    label: 'Home',
+  },
+  {
+    to: '/posts',
+    label: 'Posts',
+    active: router.currentRoute.value.path.startsWith('/posts')
+  },
+  {
+    to: '/cv',
+    label: 'CV'
+  },
+  {
+    to: '/now',
+    label: 'Now'
+  },
+]);
 
 </script>
 

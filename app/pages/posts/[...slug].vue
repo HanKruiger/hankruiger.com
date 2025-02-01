@@ -1,0 +1,22 @@
+<script setup lang="ts">
+import dayjs from 'dayjs';
+
+const route = useRoute()
+const { data: page } = await useAsyncData('post-' + route.path, () => {
+  return queryCollection('posts').path(route.path).first()
+})
+
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
+
+</script>
+
+<template>
+  <article v-if="page" class="prose md:prose-xl dark:prose-invert">
+    <h1 v-if="page.path !== '/posts'">{{ page.title }}</h1>
+    <p class="italic" v-if="page.created">Published: {{ dayjs(page.created).format('MMMM D, YYYY') }}.</p>
+    <p class="italic" v-if="page.updated">This post was last updated {{ dayjs(page.updated).format('MMMM D, YYYY') }}.</p>
+    <ContentRenderer v-if="page" :value="page" />
+  </article>
+</template>
