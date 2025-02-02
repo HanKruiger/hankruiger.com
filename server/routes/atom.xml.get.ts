@@ -1,4 +1,5 @@
 import { Feed } from 'feed';
+import { kebabCase } from 'change-case';
 
 // get base URL from Netlify env variables
 const baseUrl = (process.env.ENV === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) || 'http://localhost:3000';
@@ -28,23 +29,29 @@ export default defineEventHandler(async (event) => {
       author: AUTHORS[0]
     });
 
-    const articles = await queryCollection(event, 'posts').where('path', '<>', '/posts').all();
+    // get all posts (excluding the posts index page)
+    const articles = await queryCollection(event, 'posts')
+      .where('path', '<>', '/posts')
+      .where('created', 'IS NOT NULL')
+      .order('created', 'DESC')
+      .all();
 
     for (const article of articles) {
       feed.addItem({
         content: article.body ? renderBodyToHtml(article.body as unknown as Body) : "",
-        title: article.title ? article.title : "Missing Title",
+        title: article.title,
         id: `${baseUrl}${article.path}/`,
         link: `${baseUrl}${article.path}/`,
         description: article.description,
         author: AUTHORS,
-        date: article.updated ? new Date(article.updated) : new Date(article.created),
-        published: new Date(article.created),
+        date: article.updated ? new Date(article.updated) : new Date(article.created!),
+        published: new Date(article.created!),
       });
     };
 
     setResponseHeader(event, 'Content-Type', 'text/xml');
 
+    // generate atom feed xml from the feed object
     return feed.atom1();
 });
 
@@ -60,7 +67,7 @@ type Body = {
 
 const renderBodyToHtml = (body: Body): string => {
   if (body.type !== 'minimal') throw new Error('Unexpected non-"minimal" body type.');
-  
+
   return body.value.map(renderToText).join("");
 }
 
@@ -73,53 +80,47 @@ const renderToText = (content: ContentItem): string => {
   const attrs = content[1] as any;
   const children = content.slice(2) as ContentItem[];
 
-  // in the footnote in the article, link using
-  const footnoteAnchor = tag === "a"
-    && Object.keys(attrs).includes("dataFootnoteRef")
-    && Object.keys(attrs).includes("href");
-  if (footnoteAnchor) {
+  // in the footnote reference, link using fn:x and set id using fnref:x
+  const isFootnoteRef = tag === "a"
+    && Object.keys(attrs).includes("href")
+    && Object.keys(attrs).includes("id")
+    && (attrs.href as string).startsWith('#user-content-fn-')
+    && (attrs.id as string).startsWith('user-content-fnref-');
+  if (isFootnoteRef) {
     attrs.href = (attrs.href as string).replace('#user-content-fn-', '#fn:');
+    attrs.id = (attrs.id as string).replace('user-content-fnref-', 'fnref:');
   }
 
-  const footnoteLi = tag === "li"
+  // in the footnote, set id using fn:x
+  const isFootnote = tag === "li"
     && Object.keys(attrs).includes("id")
     && (attrs.id as string).startsWith('user-content-fn-')
-  if (footnoteLi) {
+  if (isFootnote) {
     attrs.id = attrs.id.replace('user-content-fn-', 'fn:')
   }
 
-  // in the backlink IN the footnote, link to #fnref:
-  const footnoteAnchorBacklink = tag === "a"
-    && Object.keys(attrs).includes("dataFootnoteBackref")
-    && Object.keys(attrs).includes("href");
-  if (footnoteAnchorBacklink) {
+  // in the backref, link using fnref:x
+  const footnoteBackRef = tag === "a"
+    && Object.keys(attrs).includes("href")
+    && (attrs.href as string).startsWith('#user-content-fnref-');
+  if (footnoteBackRef) {
     attrs.href = (attrs.href as string).replace('#user-content-fnref-', '#fnref:');
   }
 
-  const footnoteSup = tag === "sup"
-    && Object.keys(children[0][1]).includes("dataFootnoteRef")
-    && Object.keys(children[0][1]).includes("id");
-  if (footnoteSup) {
-    attrs.id = ((children[0][1] as any).id as string).replace('user-content-fnref-', 'fnref:');
-  }
-
+  // add the "footnotes" class to the <ol> with the footnotes
   const footnoteList = tag === "ol"
-    && ((children[0][1] as any).id as string)?.startsWith('user-content-fn-')
+    && ((children[0][0]) as string) === 'li'
+    && ((children[0][1] as any).id as string)?.startsWith('user-content-fn-');
   if (footnoteList) {
     attrs.class = "footnotes";
   }
 
   let attrsString = Object.entries(attrs).map(([k, v]) => {
-    if (footnoteAnchor && k === 'id') return null;
     const valString: string = Array.isArray(v) ? v.join(" ") : v as string;
-    return `${k}="${valString}"` // TODO: Do I need to escape "'s here?
-  }).filter(a => a !== null).join(' ')
+    return `${kebabCase(k)}${valString ? `="${valString}"` : ''}` // TODO: Do I need to escape "'s here?
+  }).filter(a => a !== null).join(' ');
 
-  if (footnoteAnchor) {
-    attrsString += ' rel="footnote"';
-  }
-
-  return `<${tag} ${attrsString}>${
+  return `<${tag}${attrsString ? ` ${attrsString}` : ''}>${
     children.map(renderToText).join("")
   }</${tag}>`;
 };

@@ -6,8 +6,8 @@ export default defineContentConfig({
       type: 'page',
       source: '2.posts/*.md',
       schema: z.object({
-        created: z.date(),
-        updated: z.date().nullable(),
+        created: z.string().nullable(),
+        updated: z.string().nullable(),
       })
     }),
     pages: defineCollection({
