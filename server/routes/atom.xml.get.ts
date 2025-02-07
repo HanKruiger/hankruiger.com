@@ -6,53 +6,53 @@ const baseUrl = (process.env.ENV === 'production' ? process.env.URL : process.en
 
 const BLOG_LANGUAGE = "en";
 const AUTHOR_NAME = "Han Kruiger";
-const AUTHORS = [{ name: AUTHOR_NAME } ];
+const AUTHORS = [{ name: AUTHOR_NAME }];
 const BLOG_TITLE = "Han's blog";
 
 // this solution for getting a feed is based on https://cmpadden.github.io/articles/nuxt-content-rss-feed
 
 export default defineEventHandler(async (event) => {
-    const atomLink = `${baseUrl}/atom.xml`;
+  const atomLink = `${baseUrl}/atom.xml`;
 
-    const feed = new Feed({
-      title: BLOG_TITLE,
-      id: atomLink,
-      link: baseUrl,
-      language: BLOG_LANGUAGE,
-      favicon: `${baseUrl}/favicon.jpg`,
-      copyright: `All rights reserved, ${new Date().getFullYear()}, ${AUTHOR_NAME}`,
-      updated: new Date(),
-      generator: "Nuxt static site generation + Feed for Node.js",
-      feedLinks: {
-        atom: atomLink
-      },
-      author: AUTHORS[0]
+  const feed = new Feed({
+    title: BLOG_TITLE,
+    id: atomLink,
+    link: baseUrl,
+    language: BLOG_LANGUAGE,
+    favicon: `${baseUrl}/favicon.jpg`,
+    copyright: `All rights reserved, ${new Date().getFullYear()}, ${AUTHOR_NAME}`,
+    updated: new Date(),
+    generator: "Nuxt static site generation + Feed for Node.js",
+    feedLinks: {
+      atom: atomLink
+    },
+    author: AUTHORS[0]
+  });
+
+  // get all posts (excluding the posts index page)
+  const articles = await queryCollection(event, 'posts')
+    .where('path', '<>', '/posts')
+    .where('created', 'IS NOT NULL')
+    .order('created', 'DESC')
+    .all();
+
+  for (const article of articles) {
+    feed.addItem({
+      content: article.body ? renderBodyToHtml(article.body as unknown as MinimalBody) : "",
+      title: article.title,
+      id: `${baseUrl}${article.path}/`,
+      link: `${baseUrl}${article.path}/`,
+      description: article.description,
+      author: AUTHORS,
+      date: article.updated ? new Date(article.updated) : new Date(article.created!),
+      published: new Date(article.created!),
     });
+  };
 
-    // get all posts (excluding the posts index page)
-    const articles = await queryCollection(event, 'posts')
-      .where('path', '<>', '/posts')
-      .where('created', 'IS NOT NULL')
-      .order('created', 'DESC')
-      .all();
+  setResponseHeader(event, 'Content-Type', 'text/xml');
 
-    for (const article of articles) {
-      feed.addItem({
-        content: article.body ? renderBodyToHtml(article.body as unknown as Body) : "",
-        title: article.title,
-        id: `${baseUrl}${article.path}/`,
-        link: `${baseUrl}${article.path}/`,
-        description: article.description,
-        author: AUTHORS,
-        date: article.updated ? new Date(article.updated) : new Date(article.created!),
-        published: new Date(article.created!),
-      });
-    };
-
-    setResponseHeader(event, 'Content-Type', 'text/xml');
-
-    // generate atom feed xml from the feed object
-    return feed.atom1();
+  // generate atom feed xml from the feed object
+  return feed.atom1();
 });
 
 
@@ -60,12 +60,12 @@ export default defineEventHandler(async (event) => {
 
 type ContentItem = string | [string, object, ...ContentItem[]];
 
-type Body = {
+type MinimalBody = {
   type: 'minimal',
   value: ContentItem[],
 }
 
-const renderBodyToHtml = (body: Body): string => {
+const renderBodyToHtml = (body: MinimalBody): string => {
   if (body.type !== 'minimal') throw new Error('Unexpected non-"minimal" body type.');
 
   return body.value.map(renderToText).join("");
@@ -107,20 +107,44 @@ const renderToText = (content: ContentItem): string => {
     attrs.href = (attrs.href as string).replace('#user-content-fnref-', '#fnref:');
   }
 
-  // add the "footnotes" class to the <ol> with the footnotes
-  const footnoteList = tag === "ol"
-    && ((children[0][0]) as string) === 'li'
-    && ((children[0][1] as any).id as string)?.startsWith('user-content-fn-');
-  if (footnoteList) {
-    attrs.class = "footnotes";
+  let attrsString = Object.entries(attrs).map(([k, v]: [string, unknown]) => {
+    let valString: string | undefined;
+    if (typeof v === 'string') {
+      valString = v;
+    } else if (Array.isArray(v)) {
+      valString = v.join(" ");
+    } else if (typeof v === 'boolean') {
+      // ignore so the attribute key is added as a flag
+    } else if (typeof v === 'number') {
+      valString = `${v}`;
+    } else {
+      throw new Error(`Unexpceted attribute value ${v}`);
+    }
+
+    // escape double quotes
+    valString = valString?.replaceAll('"', '\\"');
+
+    // TODO: Find out why this is necessary (do other attributes require this?)
+    if (k === 'className') k = 'class';
+
+    return `${kebabCase(k)}${valString ? `="${valString}"` : ''}`;
+  }).join(' ');
+
+  let innerContent: string;
+  let attributes: string | undefined;
+
+  if (tag === 'pre' && Object.keys(attrs).includes('code')) {
+    // render the contents of a <pre> with the escaped text content
+    // of what the "code" attribute contains.
+    innerContent = attrs['code']
+      .replaceAll("<", '&lt;')
+      .replaceAll(">", '&gt;')
+    // also, leave out the unnecessary attributes (which also broke things?)
+    attributes = undefined;
+  } else {
+    innerContent = children.map(renderToText).join("");
+    attributes = attrsString;
   }
 
-  let attrsString = Object.entries(attrs).map(([k, v]) => {
-    const valString: string = Array.isArray(v) ? v.join(" ") : v as string;
-    return `${kebabCase(k)}${valString ? `="${valString}"` : ''}` // TODO: Do I need to escape "'s here?
-  }).filter(a => a !== null).join(' ');
-
-  return `<${tag}${attrsString ? ` ${attrsString}` : ''}>${
-    children.map(renderToText).join("")
-  }</${tag}>`;
+  return `<${tag}${attributes ? ` ${attributes}` : ''}>${innerContent}</${tag}>`
 };
