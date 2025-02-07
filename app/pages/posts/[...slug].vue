@@ -12,6 +12,8 @@ if (!page.value) {
 
 useSeoMeta({
   title: page.value?.title,
+  ogTitle: page.value?.title,
+  ogDescription: page.value?.description,
   description: page.value?.description
 });
 
