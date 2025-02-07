@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
 
+const runtimeConfig = useRuntimeConfig();
 const route = useRoute()
 const { data: page } = await useAsyncData('post-' + route.path, () => {
   return queryCollection('posts').path(route.path).first()
@@ -10,14 +11,17 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const baseUrl = (process.env.ENV === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) || 'http://localhost:3000';
-
 useSeoMeta({
   title: page.value?.title,
   ogTitle: page.value?.title,
   ogDescription: page.value?.description,
   description: page.value?.description,
-  ogUrl: `${baseUrl}${page.value.path}/`,
+  ogUrl: `${runtimeConfig.baseUrl}${page.value.path}/`,
+});
+
+defineOgImageComponent('Pergel', {
+  created: page.value.created,
+  title: page.value.title,
 });
 
 </script>

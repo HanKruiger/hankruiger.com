@@ -1,6 +1,6 @@
 ---
-title: "Posts"
-description: "Index page with posts by Han Kruiger"
+title: "Blog posts"
+description: "A list of my blog posts."
 ---
 
 Here you can find some things that I wrote.

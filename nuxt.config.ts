@@ -1,5 +1,8 @@
 const umamiWebsiteId = process.env['UMAMI_WEBSITE_ID'];
 
+// get base URL from Netlify env variables
+const baseUrl = (process.env.ENV === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) || 'http://localhost:3000';
+
 const productionScripts = [];
 if (umamiWebsiteId) {
   productionScripts.push({
@@ -16,7 +19,11 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   compatibilityDate: '2024-10-25',
-  modules: ['@nuxt/content', '@nuxt/ui', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxt/content', '@nuxt/ui', '@nuxtjs/tailwindcss', 'nuxt-og-image'],
+
+  runtimeConfig: {
+    baseUrl: baseUrl,
+  },
 
   routeRules: {
     '/': { prerender: true },
@@ -70,5 +77,9 @@ export default defineNuxtConfig({
     prerender: {
       routes: ['/atom.xml']
     }
-  }
+  },
+
+  ogImage: {
+    zeroRuntime: true
+  },
 });
