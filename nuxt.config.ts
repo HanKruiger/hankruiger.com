@@ -39,6 +39,7 @@ export default defineNuxtConfig({
         { rel: 'alternate', type: 'application/atom+xml', title: 'Feed', href: '/atom.xml'},
       ],
       htmlAttrs: {
+        lang: "en",
         class: "h-full"
       },
       bodyAttrs: {
