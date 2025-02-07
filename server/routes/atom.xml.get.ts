@@ -1,51 +1,58 @@
 import { Feed } from 'feed';
+import { kebabCase } from 'change-case';
 
 // get base URL from Netlify env variables
 const baseUrl = (process.env.ENV === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) || 'http://localhost:3000';
 
 const BLOG_LANGUAGE = "en";
 const AUTHOR_NAME = "Han Kruiger";
-const AUTHORS = [{ name: AUTHOR_NAME } ];
+const AUTHORS = [{ name: AUTHOR_NAME }];
 const BLOG_TITLE = "Han's blog";
 
 // this solution for getting a feed is based on https://cmpadden.github.io/articles/nuxt-content-rss-feed
 
 export default defineEventHandler(async (event) => {
-    const atomLink = `${baseUrl}/atom.xml`;
+  const atomLink = `${baseUrl}/atom.xml`;
 
-    const feed = new Feed({
-      title: BLOG_TITLE,
-      id: atomLink,
-      link: baseUrl,
-      language: BLOG_LANGUAGE,
-      favicon: `${baseUrl}/favicon.jpg`,
-      copyright: `All rights reserved, ${new Date().getFullYear()}, ${AUTHOR_NAME}`,
-      updated: new Date(),
-      generator: "Nuxt static site generation + Feed for Node.js",
-      feedLinks: {
-        atom: atomLink
-      },
-      author: AUTHORS[0]
+  const feed = new Feed({
+    title: BLOG_TITLE,
+    id: atomLink,
+    link: baseUrl,
+    language: BLOG_LANGUAGE,
+    favicon: `${baseUrl}/favicon.jpg`,
+    copyright: `All rights reserved, ${new Date().getFullYear()}, ${AUTHOR_NAME}`,
+    updated: new Date(),
+    generator: "Nuxt static site generation + Feed for Node.js",
+    feedLinks: {
+      atom: atomLink
+    },
+    author: AUTHORS[0]
+  });
+
+  // get all posts (excluding the posts index page)
+  const articles = await queryCollection(event, 'posts')
+    .where('path', '<>', '/posts')
+    .where('created', 'IS NOT NULL')
+    .order('created', 'DESC')
+    .all();
+
+  for (const article of articles) {
+    feed.addItem({
+      content: article.body ? renderBodyToHtml(article.body as unknown as MinimalBody) : "",
+      title: article.title,
+      id: `${baseUrl}${article.path}/`,
+      link: `${baseUrl}${article.path}/`,
+      description: article.description,
+      author: AUTHORS,
+      date: article.updated ? new Date(article.updated) : new Date(article.created!),
+      published: new Date(article.created!),
     });
+  };
 
-    const articles = await queryCollection(event, 'posts').where('path', '<>', '/posts').all();
+  setResponseHeader(event, 'Content-Type', 'text/xml');
 
-    for (const article of articles) {
-      feed.addItem({
-        content: article.body ? renderBodyToHtml(article.body as unknown as Body) : "",
-        title: article.title ? article.title : "Missing Title",
-        id: `${baseUrl}${article.path}/`,
-        link: `${baseUrl}${article.path}/`,
-        description: article.description,
-        author: AUTHORS,
-        date: article.updated ? new Date(article.updated) : new Date(article.created),
-        published: new Date(article.created),
-      });
-    };
-
-    setResponseHeader(event, 'Content-Type', 'text/xml');
-
-    return feed.atom1();
+  // generate atom feed xml from the feed object
+  return feed.atom1();
 });
 
 
@@ -53,14 +60,14 @@ export default defineEventHandler(async (event) => {
 
 type ContentItem = string | [string, object, ...ContentItem[]];
 
-type Body = {
+type MinimalBody = {
   type: 'minimal',
   value: ContentItem[],
 }
 
-const renderBodyToHtml = (body: Body): string => {
+const renderBodyToHtml = (body: MinimalBody): string => {
   if (body.type !== 'minimal') throw new Error('Unexpected non-"minimal" body type.');
-  
+
   return body.value.map(renderToText).join("");
 }
 
@@ -73,53 +80,71 @@ const renderToText = (content: ContentItem): string => {
   const attrs = content[1] as any;
   const children = content.slice(2) as ContentItem[];
 
-  // in the footnote in the article, link using
-  const footnoteAnchor = tag === "a"
-    && Object.keys(attrs).includes("dataFootnoteRef")
-    && Object.keys(attrs).includes("href");
-  if (footnoteAnchor) {
+  // in the footnote reference, link using fn:x and set id using fnref:x
+  const isFootnoteRef = tag === "a"
+    && Object.keys(attrs).includes("href")
+    && Object.keys(attrs).includes("id")
+    && (attrs.href as string).startsWith('#user-content-fn-')
+    && (attrs.id as string).startsWith('user-content-fnref-');
+  if (isFootnoteRef) {
     attrs.href = (attrs.href as string).replace('#user-content-fn-', '#fn:');
+    attrs.id = (attrs.id as string).replace('user-content-fnref-', 'fnref:');
   }
 
-  const footnoteLi = tag === "li"
+  // in the footnote, set id using fn:x
+  const isFootnote = tag === "li"
     && Object.keys(attrs).includes("id")
     && (attrs.id as string).startsWith('user-content-fn-')
-  if (footnoteLi) {
+  if (isFootnote) {
     attrs.id = attrs.id.replace('user-content-fn-', 'fn:')
   }
 
-  // in the backlink IN the footnote, link to #fnref:
-  const footnoteAnchorBacklink = tag === "a"
-    && Object.keys(attrs).includes("dataFootnoteBackref")
-    && Object.keys(attrs).includes("href");
-  if (footnoteAnchorBacklink) {
+  // in the backref, link using fnref:x
+  const footnoteBackRef = tag === "a"
+    && Object.keys(attrs).includes("href")
+    && (attrs.href as string).startsWith('#user-content-fnref-');
+  if (footnoteBackRef) {
     attrs.href = (attrs.href as string).replace('#user-content-fnref-', '#fnref:');
   }
 
-  const footnoteSup = tag === "sup"
-    && Object.keys(children[0][1]).includes("dataFootnoteRef")
-    && Object.keys(children[0][1]).includes("id");
-  if (footnoteSup) {
-    attrs.id = ((children[0][1] as any).id as string).replace('user-content-fnref-', 'fnref:');
+  let attrsString = Object.entries(attrs).map(([k, v]: [string, unknown]) => {
+    let valString: string | undefined;
+    if (typeof v === 'string') {
+      valString = v;
+    } else if (Array.isArray(v)) {
+      valString = v.join(" ");
+    } else if (typeof v === 'boolean') {
+      // ignore so the attribute key is added as a flag
+    } else if (typeof v === 'number') {
+      valString = `${v}`;
+    } else {
+      throw new Error(`Unexpceted attribute value ${v}`);
+    }
+
+    // escape double quotes
+    valString = valString?.replaceAll('"', '\\"');
+
+    // TODO: Find out why this is necessary (do other attributes require this?)
+    if (k === 'className') k = 'class';
+
+    return `${kebabCase(k)}${valString ? `="${valString}"` : ''}`;
+  }).join(' ');
+
+  let innerContent: string;
+  let attributes: string | undefined;
+
+  if (tag === 'pre' && Object.keys(attrs).includes('code')) {
+    // render the contents of a <pre> with the escaped text content
+    // of what the "code" attribute contains.
+    innerContent = attrs['code']
+      .replaceAll("<", '&lt;')
+      .replaceAll(">", '&gt;')
+    // also, leave out the unnecessary attributes (which also broke things?)
+    attributes = undefined;
+  } else {
+    innerContent = children.map(renderToText).join("");
+    attributes = attrsString;
   }
 
-  const footnoteList = tag === "ol"
-    && ((children[0][1] as any).id as string)?.startsWith('user-content-fn-')
-  if (footnoteList) {
-    attrs.class = "footnotes";
-  }
-
-  let attrsString = Object.entries(attrs).map(([k, v]) => {
-    if (footnoteAnchor && k === 'id') return null;
-    const valString: string = Array.isArray(v) ? v.join(" ") : v as string;
-    return `${k}="${valString}"` // TODO: Do I need to escape "'s here?
-  }).filter(a => a !== null).join(' ')
-
-  if (footnoteAnchor) {
-    attrsString += ' rel="footnote"';
-  }
-
-  return `<${tag} ${attrsString}>${
-    children.map(renderToText).join("")
-  }</${tag}>`;
+  return `<${tag}${attributes ? ` ${attributes}` : ''}>${innerContent}</${tag}>`
 };
