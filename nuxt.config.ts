@@ -1,7 +1,7 @@
 const umamiWebsiteId = process.env['UMAMI_WEBSITE_ID'];
 
 // get base URL from Netlify env variables
-const baseUrl = (process.env.ENV === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) || 'http://localhost:3000';
+const baseUrl = (process.env.ENV === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) ?? 'http://localhost:3000';
 
 const productionScripts = [];
 if (umamiWebsiteId) {
@@ -37,6 +37,9 @@ export default defineNuxtConfig({
       link: [
         { rel: 'shortcut icon', type: 'image/jpg', href: '/favicon.jpg' },
         { rel: 'alternate', type: 'application/atom+xml', title: 'Feed', href: '/atom.xml'},
+      ],
+      meta: [
+        { name: 'fediverse:creator', content: '@hankruiger@mastodon.nl' }
       ],
       htmlAttrs: {
         lang: "en",
