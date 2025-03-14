@@ -17,13 +17,16 @@ const { data: posts } = await useAsyncData('posts-' + route.path, () => {
     <nav>
       <ol>
         <li class="flex flex-col gap-4">
+          <!--suppress HtmlUnknownTarget -->
           <ULink v-for="post in posts" :to="post.path">
-            <UCard>
-              <div class="underline font-medium text-xl">
-                {{ post.title }}
-              </div>
+            <UCard class="bg-(--ui-bg-elevated) divide-(--ui-border)">
+              <template #header>
+                <div class="underline font-medium text-xl text-(--ui-text)">
+                  {{ post.title }}
+                </div>
+              </template>
               <template #footer>
-                <span class="italic">{{ dayjs(post.created).format('MMMM D, YYYY') }}</span>
+                <span class="italic text-base">{{ dayjs(post.created).format('MMMM D, YYYY') }}</span>
               </template>
             </UCard>
           </ULink>

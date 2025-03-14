@@ -2,14 +2,16 @@
 
 useSeoMeta({
   titleTemplate: (titleChunk) => {
-    return titleChunk ?  `${titleChunk} | Han` : 'Han';
+    return titleChunk ? `${titleChunk} | Han` : 'Han';
   },
 });
 
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <UApp>
+    <NuxtLayout>
+      <NuxtPage/>
+    </NuxtLayout>
+  </UApp>
 </template>

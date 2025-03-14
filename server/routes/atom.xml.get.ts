@@ -11,14 +11,14 @@ const BLOG_TITLE = "Han's blog";
 // this solution for getting a feed is based on https://cmpadden.github.io/articles/nuxt-content-rss-feed
 
 export default defineEventHandler(async (event) => {
-  const atomLink = `${runtimeConfig.baseUrl}/atom.xml`;
+  const atomLink = `${runtimeConfig.public.baseUrl}/atom.xml`;
 
   const feed = new Feed({
     title: BLOG_TITLE,
     id: atomLink,
-    link: runtimeConfig.baseUrl,
+    link: runtimeConfig.public.baseUrl,
     language: BLOG_LANGUAGE,
-    favicon: `${runtimeConfig.baseUrl}/favicon.jpg`,
+    favicon: `${runtimeConfig.public.baseUrl}/favicon.jpg`,
     copyright: `All rights reserved, ${new Date().getFullYear()}, ${AUTHOR_NAME}`,
     updated: new Date(),
     generator: "Nuxt static site generation + Feed for Node.js",
@@ -39,12 +39,12 @@ export default defineEventHandler(async (event) => {
     feed.addItem({
       content: article.body ? renderBodyToHtml(article.body as unknown as MinimalBody) : "",
       title: article.title,
-      id: `${runtimeConfig.baseUrl}${article.path}/`,
-      link: `${runtimeConfig.baseUrl}${article.path}/`,
+      id: `${runtimeConfig.public.baseUrl}${article.path}/`,
+      link: `${runtimeConfig.public.baseUrl}${article.path}/`,
       description: article.description,
       author: AUTHORS,
-      date: article.updated ? new Date(article.updated) : new Date(article.created!),
-      published: new Date(article.created!),
+      date: article.updated ? new Date(article.updated) : new Date(article.created as string),
+      published: new Date(article.created as string),
     });
   };
 

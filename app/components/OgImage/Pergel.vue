@@ -17,7 +17,7 @@ const props = defineProps<{
 const runtimeConfig = useRuntimeConfig();
 
 const domain = computed(() => {
-  const url = new URL(runtimeConfig.baseUrl);
+  const url = new URL(runtimeConfig.public.baseUrl);
   return url.hostname;
 })
 

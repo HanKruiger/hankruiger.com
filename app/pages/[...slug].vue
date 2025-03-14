@@ -17,7 +17,7 @@ useSeoMeta({
   ogTitle: page.value?.title,
   ogDescription: page.value?.description,
   description: page.value?.description,
-  ogUrl: `${runtimeConfig.baseUrl}${page.value.path}/`,
+  ogUrl: `${runtimeConfig.public.baseUrl}${page.value.path}/`,
 });
 
 </script>
