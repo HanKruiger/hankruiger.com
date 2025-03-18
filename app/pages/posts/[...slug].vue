@@ -14,6 +14,7 @@ if (!page.value) {
 useSeoMeta({
   title: page.value?.title,
   ogTitle: page.value?.title,
+  ogType: 'article',
   ogDescription: page.value?.description,
   description: page.value?.description,
   ogUrl: `${runtimeConfig.public.baseUrl}${page.value.path}/`,
