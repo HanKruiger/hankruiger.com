@@ -15,3 +15,12 @@ code::before, code::after {
 .dark {
   --ui-border: #474c52;
 }
+
+/* invert diagrams (I stick to black colours there) */
+.dark img.diagram {
+  filter: invert(1);
+}
+
+article img {
+  margin: auto;
+}

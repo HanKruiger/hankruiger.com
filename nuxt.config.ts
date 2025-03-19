@@ -14,7 +14,7 @@ if (umamiWebsiteId) {
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {enabled: true},
   future: {
     compatibilityVersion: 4,
   },
@@ -29,20 +29,20 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true },
+    '/': {prerender: true},
 
     // `/about` no longer exists; redirects to `/`
-    '/about': { redirect: '/' },
+    '/about': {redirect: '/'},
   },
 
   app: {
     head: {
       link: [
-        { rel: 'shortcut icon', type: 'image/jpg', href: '/favicon.jpg' },
-        { rel: 'alternate', type: 'application/atom+xml', title: 'Feed', href: '/atom.xml'},
+        {rel: 'shortcut icon', type: 'image/jpg', href: '/favicon.jpg'},
+        {rel: 'alternate', type: 'application/atom+xml', title: 'Feed', href: '/atom.xml'},
       ],
       meta: [
-        { name: 'fediverse:creator', content: '@hankruiger@mastodon.nl' }
+        {name: 'fediverse:creator', content: '@hankruiger@mastodon.nl'}
       ],
       htmlAttrs: {
         lang: "en",
@@ -66,6 +66,7 @@ export default defineNuxtConfig({
             'python',
             'sql',
             'json',
+            'rust',
           ]
         }
       }
