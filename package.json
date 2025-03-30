@@ -1,7 +1,7 @@
 {
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.6.4",
+  "packageManager": "pnpm@10.7.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "nuxt build",
@@ -10,15 +10,16 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@nuxt/content": "^3.3.0",
-    "@nuxt/ui": "^3.0.0",
+    "@iconify-json/heroicons": "^1.2.2",
+    "@nuxt/content": "^3.4.0",
+    "@nuxt/ui": "^3.0.2",
     "@tailwindcss/typography": "^0.5.16",
     "change-case": "^5.4.4",
     "dayjs": "^1.11.13",
     "feed": "^4.2.2",
-    "nuxt": "^3.16.0",
-    "nuxt-og-image": "^5.0.3",
-    "tailwindcss": "^4.0.14"
+    "nuxt": "^3.16.1",
+    "nuxt-og-image": "^5.1.1",
+    "tailwindcss": "^4.0.17"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

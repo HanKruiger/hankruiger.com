@@ -1,26 +1,36 @@
-@import 'tailwindcss' theme(static);
-@import '@nuxt/ui';
+@import "tailwindcss" theme(static);
+@import "@nuxt/ui";
 @plugin "@tailwindcss/typography";
 
+/* https://github.com/nuxt/ui/issues/2332 */
+@layer base {
+    button,
+    [role="button"] {
+        @apply cursor-pointer;
+        @apply disabled:cursor-not-allowed;
+    }
+}
+
 /* remove the `'s around inline code (from @tailwindcss/typography) */
-code::before, code::after {
-  content: '';
+code::before,
+code::after {
+    content: "";
 }
 
 :root {
-  --ui-primary: teal;
-  --ui-border: #9f9f9f;
+    --ui-primary: teal;
+    --ui-border: #9f9f9f;
 }
 
 .dark {
-  --ui-border: #474c52;
+    --ui-border: #474c52;
 }
 
 /* invert diagrams (I stick to black colours there) */
 .dark img.diagram {
-  filter: invert(1);
+    filter: invert(1);
 }
 
 article img {
-  margin: auto;
+    margin: auto;
 }
