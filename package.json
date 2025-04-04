@@ -14,6 +14,7 @@
     "@nuxt/content": "^3.4.0",
     "@nuxt/ui": "^3.0.2",
     "@tailwindcss/typography": "^0.5.16",
+    "behave_blog_demo": "file:../behave-blog-demo/pkg",
     "change-case": "^5.4.4",
     "dayjs": "^1.11.13",
     "feed": "^4.2.2",

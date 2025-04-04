@@ -20,6 +20,9 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@4.0.17)
+      behave_blog_demo:
+        specifier: file:../behave-blog-demo/pkg
+        version: file:../behave-blog-demo/pkg
       change-case:
         specifier: ^5.4.4
         version: 5.4.4
@@ -1529,6 +1532,9 @@ packages:
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
+
+  behave_blog_demo@file:../behave-blog-demo/pkg:
+    resolution: {directory: ../behave-blog-demo/pkg, type: directory}
 
   better-sqlite3@11.9.1:
     resolution: {integrity: sha512-Ba0KR+Fzxh2jDRhdg6TSH0SJGzb8C0aBY4hR8w8madIdIzzC6Y1+kx5qR6eS1Z+Gy20h6ZU28aeyg0z1VIrShQ==}
@@ -6243,6 +6249,8 @@ snapshots:
   base64-js@0.0.8: {}
 
   base64-js@1.5.1: {}
+
+  behave_blog_demo@file:../behave-blog-demo/pkg: {}
 
   better-sqlite3@11.9.1:
     dependencies:
