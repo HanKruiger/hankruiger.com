@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import wasm from "behave_blog_demo";
+import startDemo from "behave_blog_demo";
 
 function start() {
-  wasm();
+  startDemo();
 }
+
 </script>
 
 <template>
