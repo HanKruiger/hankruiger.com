@@ -1,7 +1,7 @@
 <template>
   <ClientOnly>
     <Teleport to="#full-screen-stickies">
-      <div class="absolute">
+      <div class="absolute w-full h-screen">
         <slot />
       </div>
     </Teleport>
