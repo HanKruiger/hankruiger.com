@@ -8,5 +8,5 @@ function start() {
 </script>
 
 <template>
-  <UButton @click="start">Start the demo</UButton>
+  <UButton @click="start" icon="lucide:download">Start the demo (XX MB)</UButton>
 </template>

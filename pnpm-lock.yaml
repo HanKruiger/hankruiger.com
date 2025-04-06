@@ -11,6 +11,9 @@ importers:
       '@iconify-json/heroicons':
         specifier: ^1.2.2
         version: 1.2.2
+      '@iconify-json/lucide':
+        specifier: ^1.2.34
+        version: 1.2.34
       '@nuxt/content':
         specifier: ^3.4.0
         version: 3.4.0(@libsql/client@0.14.0)(magicast@0.3.5)(typescript@5.8.2)
@@ -354,6 +357,9 @@ packages:
 
   '@iconify-json/heroicons@1.2.2':
     resolution: {integrity: sha512-qoW4pXr5kTTL6juEjgTs83OJIwpePu7q1tdtKVEdj+i0zyyVHgg/dd9grsXJQnpTpBt6/VwNjrXBvFjRsKPENg==}
+
+  '@iconify-json/lucide@1.2.34':
+    resolution: {integrity: sha512-6xiITvlYP/5d6KQPRBHDQ+eaLxRWiTvXfuVGuNX2ahNLbEi0VKB04v008IQLPrMu/C4tRMI4+sRzHd/wSFxGZQ==}
 
   '@iconify/collections@1.0.532':
     resolution: {integrity: sha512-vOuXU93ceb5Z0so0nYxP536J5WTaFphsznfLlUCgGWnhOOFfpPgNdZDdyUNzJSVDzp0amj7Jja4JjQWUFJyKBA==}
@@ -4731,6 +4737,10 @@ snapshots:
       - vue
 
   '@iconify-json/heroicons@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/lucide@1.2.34':
     dependencies:
       '@iconify/types': 2.0.0
 

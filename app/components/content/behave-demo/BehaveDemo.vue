@@ -9,7 +9,7 @@ const opacity = ref(0.3);
       class="flex flex-col w-fit h-fit rounded-md p-2 dark:bg-neutral-800 bg-neutral-300 gap-2"
     >
       <USlider
-        title="Adjust Bevy app opacity"
+        title="Adjust demo opacity"
         orientation="vertical"
         :min="0.0"
         :max="1.0"
@@ -17,7 +17,8 @@ const opacity = ref(0.3);
         class="h-20"
         v-model="opacity"
       />
-      <UButton title="Reset Bevy app" icon="lucide:list-restart" />
+      <UButton id="spawn-agent-toolbar" title="Add agent" icon="lucide:user-plus" />
+      <UButton title="Reset demo" icon="lucide:list-restart" />
     </div>
   </Teleport>
 </template>
