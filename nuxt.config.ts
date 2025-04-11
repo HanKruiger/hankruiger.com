@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   compatibilityDate: "2024-10-25",
-  modules: ["@nuxt/content", "@nuxt/ui", "nuxt-og-image"],
+  modules: ["@nuxt/content", "@nuxt/ui", "nuxt-og-image", "@pinia/nuxt"],
   css: ["~/assets/css/main.css"],
 
   runtimeConfig: {
