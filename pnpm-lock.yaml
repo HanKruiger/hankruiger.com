@@ -11,15 +11,24 @@ importers:
       '@iconify-json/heroicons':
         specifier: ^1.2.2
         version: 1.2.2
+      '@iconify-json/lucide':
+        specifier: ^1.2.34
+        version: 1.2.34
       '@nuxt/content':
         specifier: ^3.4.0
         version: 3.4.0(@libsql/client@0.14.0)(magicast@0.3.5)(typescript@5.8.2)
       '@nuxt/ui':
         specifier: ^3.0.2
         version: 3.0.2(@babel/parser@7.27.0)(change-case@5.4.4)(db0@0.3.1(@libsql/client@0.14.0)(better-sqlite3@11.9.1))(embla-carousel@8.5.2)(ioredis@5.6.0)(magicast@0.3.5)(typescript@5.8.2)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(yaml@2.7.1))(zod@3.24.2)
+      '@pinia/nuxt':
+        specifier: 0.11.0
+        version: 0.11.0(magicast@0.3.5)(pinia@3.0.2(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2)))
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@4.0.17)
+      behave_blog_demo:
+        specifier: ^0.1.0
+        version: 0.1.0
       change-case:
         specifier: ^5.4.4
         version: 5.4.4
@@ -35,6 +44,9 @@ importers:
       nuxt-og-image:
         specifier: ^5.1.1
         version: 5.1.1(@unhead/vue@2.0.2(vue@3.5.13(typescript@5.8.2)))(magicast@0.3.5)(unstorage@1.15.0(db0@0.3.1(@libsql/client@0.14.0)(better-sqlite3@11.9.1))(ioredis@5.6.0))(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))
+      pinia:
+        specifier: ^3.0.2
+        version: 3.0.2(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
       tailwindcss:
         specifier: ^4.0.17
         version: 4.0.17
@@ -351,6 +363,9 @@ packages:
 
   '@iconify-json/heroicons@1.2.2':
     resolution: {integrity: sha512-qoW4pXr5kTTL6juEjgTs83OJIwpePu7q1tdtKVEdj+i0zyyVHgg/dd9grsXJQnpTpBt6/VwNjrXBvFjRsKPENg==}
+
+  '@iconify-json/lucide@1.2.34':
+    resolution: {integrity: sha512-6xiITvlYP/5d6KQPRBHDQ+eaLxRWiTvXfuVGuNX2ahNLbEi0VKB04v008IQLPrMu/C4tRMI4+sRzHd/wSFxGZQ==}
 
   '@iconify/collections@1.0.532':
     resolution: {integrity: sha512-vOuXU93ceb5Z0so0nYxP536J5WTaFphsznfLlUCgGWnhOOFfpPgNdZDdyUNzJSVDzp0amj7Jja4JjQWUFJyKBA==}
@@ -737,6 +752,11 @@ packages:
   '@parcel/watcher@2.5.1':
     resolution: {integrity: sha512-dfUnCxiN9H4ap84DvD2ubjw+3vUNpstxa0TneY/Paat8a3R4uQZDLSvWjmznAY/DoahqTHl9V46HF/Zs3F29pg==}
     engines: {node: '>= 10.0.0'}
+
+  '@pinia/nuxt@0.11.0':
+    resolution: {integrity: sha512-QGFlUAkeVAhPCTXacrtNP4ti24sGEleVzmxcTALY9IkS6U5OUox7vmNL1pkqBeW39oSNq/UC5m40ofDEPHB1fg==}
+    peerDependencies:
+      pinia: ^3.0.2
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -1317,6 +1337,9 @@ packages:
   '@vue/devtools-api@6.6.4':
     resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
 
+  '@vue/devtools-api@7.7.2':
+    resolution: {integrity: sha512-1syn558KhyN+chO5SjlZIwJ8bV/bQ1nOVTG66t2RbG66ZGekyiYNmRO7X9BJCXQqPsFHlnksqvPhce2qpzxFnA==}
+
   '@vue/devtools-core@7.7.2':
     resolution: {integrity: sha512-lexREWj1lKi91Tblr38ntSsy6CvI8ba7u+jmwh2yruib/ltLUcsIzEjCnrkh1yYGGIKXbAuYV2tOG10fGDB9OQ==}
     peerDependencies:
@@ -1529,6 +1552,9 @@ packages:
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
+
+  behave_blog_demo@0.1.0:
+    resolution: {integrity: sha512-4O1c+pLBoWRqeAYhxVVs71dAX1608fGlkl/DtdG2OzRjyl0AUU/HuZqLan0AOZ+JqAtEDuw7v7ccsrhHYjvp6w==}
 
   better-sqlite3@11.9.1:
     resolution: {integrity: sha512-Ba0KR+Fzxh2jDRhdg6TSH0SJGzb8C0aBY4hR8w8madIdIzzC6Y1+kx5qR6eS1Z+Gy20h6ZU28aeyg0z1VIrShQ==}
@@ -3220,6 +3246,15 @@ packages:
     resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
     engines: {node: '>=12'}
 
+  pinia@3.0.2:
+    resolution: {integrity: sha512-sH2JK3wNY809JOeiiURUR0wehJ9/gd9qFN2Y828jCbxEzKEmEt0pzCXwqiSTfuRsK9vQsOflSdnbdBOGrhtn+g==}
+    peerDependencies:
+      typescript: '>=4.4.4'
+      vue: ^2.7.0 || ^3.5.11
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   pkg-types@1.3.1:
     resolution: {integrity: sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==}
 
@@ -4728,6 +4763,10 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify-json/lucide@1.2.34':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify/collections@1.0.532':
     dependencies:
       '@iconify/types': 2.0.0
@@ -5479,6 +5518,13 @@ snapshots:
       '@parcel/watcher-win32-ia32': 2.5.1
       '@parcel/watcher-win32-x64': 2.5.1
 
+  '@pinia/nuxt@0.11.0(magicast@0.3.5)(pinia@3.0.2(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2)))':
+    dependencies:
+      '@nuxt/kit': 3.16.1(magicast@0.3.5)
+      pinia: 3.0.2(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
+    transitivePeerDependencies:
+      - magicast
+
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
@@ -6027,6 +6073,10 @@ snapshots:
 
   '@vue/devtools-api@6.6.4': {}
 
+  '@vue/devtools-api@7.7.2':
+    dependencies:
+      '@vue/devtools-kit': 7.7.2
+
   '@vue/devtools-core@7.7.2(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))':
     dependencies:
       '@vue/devtools-kit': 7.7.2
@@ -6243,6 +6293,8 @@ snapshots:
   base64-js@0.0.8: {}
 
   base64-js@1.5.1: {}
+
+  behave_blog_demo@0.1.0: {}
 
   better-sqlite3@11.9.1:
     dependencies:
@@ -8394,6 +8446,13 @@ snapshots:
   picomatch@2.3.1: {}
 
   picomatch@4.0.2: {}
+
+  pinia@3.0.2(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2)):
+    dependencies:
+      '@vue/devtools-api': 7.7.2
+      vue: 3.5.13(typescript@5.8.2)
+    optionalDependencies:
+      typescript: 5.8.2
 
   pkg-types@1.3.1:
     dependencies:

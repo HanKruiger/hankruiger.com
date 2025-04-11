@@ -1,60 +1,74 @@
-const umamiWebsiteId = process.env['UMAMI_WEBSITE_ID'];
+const umamiWebsiteId = process.env["UMAMI_WEBSITE_ID"];
 
 // get base URL from Netlify env variables
-const baseUrl = (process.env.ENV === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) ?? 'http://localhost:3000';
+const baseUrl =
+  (process.env.ENV === "production"
+    ? process.env.URL
+    : process.env.DEPLOY_PRIME_URL) ?? "http://localhost:3000";
 
 const productionScripts = [];
 if (umamiWebsiteId) {
   productionScripts.push({
     async: true,
-    src: 'https://analytics.umami.is/script.js',
-    'data-website-id': umamiWebsiteId,
+    src: "https://analytics.umami.is/script.js",
+    "data-website-id": umamiWebsiteId,
   });
 }
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: {enabled: true},
+  devtools: { enabled: true },
   future: {
     compatibilityVersion: 4,
   },
-  compatibilityDate: '2024-10-25',
-  modules: ['@nuxt/content', '@nuxt/ui', 'nuxt-og-image'],
-  css: ['~/assets/css/main.css'],
+  compatibilityDate: "2024-10-25",
+  modules: ["@nuxt/content", "@nuxt/ui", "nuxt-og-image", "@pinia/nuxt"],
+  css: ["~/assets/css/main.css"],
 
   runtimeConfig: {
     public: {
       baseUrl: baseUrl,
-    }
+    },
+  },
+
+  vite: {
+    optimizeDeps: {
+      // vite dev server doesn't work nicely with WASM,
+      // so we exclude it from their optimization step
+      exclude: ["behave_blog_demo"],
+    },
   },
 
   routeRules: {
-    '/': {prerender: true},
+    "/": { prerender: true },
 
     // `/about` no longer exists; redirects to `/`
-    '/about': {redirect: '/'},
+    "/about": { redirect: "/" },
   },
 
   app: {
     head: {
       link: [
-        {rel: 'shortcut icon', type: 'image/jpg', href: '/favicon.jpg'},
-        {rel: 'alternate', type: 'application/atom+xml', title: 'Feed', href: '/atom.xml'},
+        { rel: "shortcut icon", type: "image/jpg", href: "/favicon.jpg" },
+        {
+          rel: "alternate",
+          type: "application/atom+xml",
+          title: "Feed",
+          href: "/atom.xml",
+        },
       ],
-      meta: [
-        {name: 'fediverse:creator', content: '@hankruiger@mastodon.nl'}
-      ],
+      meta: [{ name: "fediverse:creator", content: "@hankruiger@mastodon.nl" }],
       htmlAttrs: {
         lang: "en",
-        class: "h-full"
+        class: "h-full",
       },
       bodyAttrs: {
-        class: "h-full"
+        class: "h-full",
       },
     },
     rootAttrs: {
-      class: "h-full"
-    }
+      class: "h-full",
+    },
   },
 
   content: {
@@ -62,32 +76,27 @@ export default defineNuxtConfig({
       markdown: {
         highlight: {
           theme: "one-dark-pro",
-          langs: [
-            'python',
-            'sql',
-            'json',
-            'rust',
-          ]
-        }
-      }
-    }
+          langs: ["python", "sql", "json", "rust"],
+        },
+      },
+    },
   },
 
   $production: {
     app: {
       head: {
-        script: productionScripts
-      }
-    }
+        script: productionScripts,
+      },
+    },
   },
 
   nitro: {
     prerender: {
-      routes: ['/atom.xml']
-    }
+      routes: ["/atom.xml"],
+    },
   },
 
   ogImage: {
-    zeroRuntime: true
+    zeroRuntime: true,
   },
 });
