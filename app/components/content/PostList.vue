@@ -18,7 +18,7 @@ const { data: posts } = await useAsyncData('posts-' + route.path, () => {
       <ol>
         <li class="flex flex-col gap-4">
           <!--suppress HtmlUnknownTarget -->
-          <ULink v-for="post in posts" :to="post.path">
+          <ULink v-for="post in posts" :to="`${post.path}/`">
             <UCard class="bg-(--ui-bg-elevated) divide-(--ui-border)">
               <template #header>
                 <div class="underline font-medium text-xl text-(--ui-text)">
