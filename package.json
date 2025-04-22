@@ -19,6 +19,7 @@
     "behave_blog_demo": "^0.1.0",
     "change-case": "^5.4.4",
     "dayjs": "^1.11.13",
+    "esbuild": "^0.25.2",
     "feed": "^4.2.2",
     "nuxt": "^3.16.2",
     "nuxt-og-image": "^5.1.2",
