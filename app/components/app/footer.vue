@@ -23,13 +23,8 @@ const socialLinks = [
   },
   {
     label: "Bluesky",
-    to: "https://bsky.app/profile/hankruiger.bsky.social",
+    to: "https://bsky.app/profile/hankruiger.com",
     rel: "me",
-    target: "_blank",
-  },
-  {
-    label: "LinkedIn",
-    to: "https://www.linkedin.com/in/hankruiger/",
     target: "_blank",
   },
 ];
