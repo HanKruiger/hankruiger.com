@@ -60,12 +60,12 @@ export default defineEventHandler(async (event) => {
 type ContentItem = string | [string, object, ...ContentItem[]];
 
 type MinimalBody = {
-  type: 'minimal',
+  type: 'minimark',
   value: ContentItem[],
 }
 
 const renderBodyToHtml = (body: MinimalBody): string => {
-  if (body.type !== 'minimal') throw new Error('Unexpected non-"minimal" body type.');
+  if (body.type !== 'minimark') throw new Error('Unexpected non-"minimark" body type: ' + body.type);
 
   return body.value.map(renderToText).join("");
 }

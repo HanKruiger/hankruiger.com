@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
+import { withoutTrailingSlash } from 'ufo';
 
 const runtimeConfig = useRuntimeConfig();
 const route = useRoute()
-const { data: page } = await useAsyncData('post-' + route.path, () => {
-  return queryCollection('posts').path(route.path).first()
+const { data: page } = await useAsyncData('post-' + withoutTrailingSlash(route.path), () => {
+  return queryCollection('posts').path(withoutTrailingSlash(route.path)).first()
 })
 
 if (!page.value) {
