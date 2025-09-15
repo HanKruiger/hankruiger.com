@@ -22,6 +22,10 @@ export default defineNuxtConfig({
   modules: ["@nuxt/content", "@nuxt/ui", "nuxt-og-image", "@pinia/nuxt"],
   css: ["~/assets/css/main.css"],
 
+  site: {
+    url: baseUrl,
+  },
+
   runtimeConfig: {
     public: {
       baseUrl: baseUrl,
