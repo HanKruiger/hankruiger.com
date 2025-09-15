@@ -18,10 +18,7 @@ if (umamiWebsiteId) {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  future: {
-    compatibilityVersion: 4,
-  },
-  compatibilityDate: "2024-10-25",
+  compatibilityDate: "2025-09-14",
   modules: ["@nuxt/content", "@nuxt/ui", "nuxt-og-image", "@pinia/nuxt"],
   css: ["~/assets/css/main.css"],
 
