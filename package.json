@@ -1,7 +1,7 @@
 {
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.20.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "nuxt build",
@@ -10,22 +10,22 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@iconify-json/heroicons": "^1.2.2",
-    "@iconify-json/lucide": "^1.2.56",
-    "@nuxt/content": "^3.7.0",
-    "@nuxt/ui": "^3.3.3",
+    "@iconify-json/heroicons": "^1.2.3",
+    "@iconify-json/lucide": "^1.2.71",
+    "@nuxt/content": "^3.8.0",
+    "@nuxt/ui": "^4.1.0",
     "@pinia/nuxt": "0.11.2",
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/typography": "^0.5.19",
     "behave_blog_demo": "^0.1.0",
-    "better-sqlite3": "^12.2.0",
+    "better-sqlite3": "^12.4.1",
     "change-case": "^5.4.4",
-    "dayjs": "^1.11.13",
-    "esbuild": "^0.25.5",
+    "dayjs": "^1.11.19",
+    "esbuild": "^0.25.11",
     "feed": "^4.2.2",
-    "nuxt": "^4.1.2",
-    "nuxt-og-image": "^5.1.9",
+    "nuxt": "^4.2.0",
+    "nuxt-og-image": "^5.1.12",
     "pinia": "^3.0.3",
-    "tailwindcss": "^4.1.11",
+    "tailwindcss": "^4.1.16",
     "ufo": "^1.6.1"
   },
   "pnpm": {
