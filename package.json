@@ -11,21 +11,21 @@
   },
   "dependencies": {
     "@iconify-json/heroicons": "^1.2.3",
-    "@iconify-json/lucide": "^1.2.71",
-    "@nuxt/content": "^3.8.0",
-    "@nuxt/ui": "^4.1.0",
+    "@iconify-json/lucide": "^1.2.82",
+    "@nuxt/content": "^3.10.0",
+    "@nuxt/ui": "^4.3.0",
     "@pinia/nuxt": "0.11.2",
     "@tailwindcss/typography": "^0.5.19",
     "behave_blog_demo": "^0.1.0",
-    "better-sqlite3": "^12.4.1",
+    "better-sqlite3": "^12.5.0",
     "change-case": "^5.4.4",
     "dayjs": "^1.11.19",
-    "esbuild": "^0.25.11",
+    "esbuild": "^0.25.12",
     "feed": "^4.2.2",
-    "nuxt": "^4.2.0",
-    "nuxt-og-image": "^5.1.12",
-    "pinia": "^3.0.3",
-    "tailwindcss": "^4.1.16",
+    "nuxt": "^4.2.2",
+    "nuxt-og-image": "^5.1.13",
+    "pinia": "^3.0.4",
+    "tailwindcss": "^4.1.18",
     "ufo": "^1.6.1"
   },
   "pnpm": {
@@ -35,6 +35,11 @@
       "better-sqlite3",
       "esbuild",
       "vue-demi"
-    ]
+    ],
+    "overrides": {
+      "@tiptap/core": "^3.14.0",
+      "@tiptap/pm": "^3.14.0",
+      "parse-url": "^10.0.3"
+    }
   }
 }
