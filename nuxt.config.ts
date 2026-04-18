@@ -19,7 +19,7 @@ if (umamiWebsiteId) {
 export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: "2025-09-14",
-  modules: ["@nuxt/content", "@nuxt/ui", "nuxt-og-image", "@pinia/nuxt"],
+  modules: ["@nuxt/content", "@nuxt/ui", "nuxt-og-image", "@pinia/nuxt", "@nuxt/fonts"],
   css: ["~/assets/css/main.css"],
 
   site: {
@@ -41,7 +41,10 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/": { prerender: true },
+    "/": { prerender: true, ogImage: false },
+    "/cv": { ogImage: false },
+    "/now": { ogImage: false },
+    "/posts": { ogImage: false },
 
     // `/about` no longer exists; redirects to `/`
     "/about": { redirect: "/" },
