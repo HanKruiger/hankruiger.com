@@ -21,9 +21,11 @@ useSeoMeta({
   ogUrl: `${runtimeConfig.public.baseUrl}${page.value.path}`,
 });
 
-defineOgImageComponent('Pergel', {
-  created: page.value.created,
+defineOgImage('BlogPostTakumi', {
   title: page.value.title,
+  author: 'Han Kruiger',
+  date: page.value.created,
+  description: page.value.description,
 });
 
 </script>

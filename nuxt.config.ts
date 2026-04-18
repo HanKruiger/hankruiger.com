@@ -19,7 +19,13 @@ if (umamiWebsiteId) {
 export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: "2025-09-14",
-  modules: ["@nuxt/content", "@nuxt/ui", "nuxt-og-image", "@pinia/nuxt"],
+  modules: [
+    "@nuxt/content",
+    "@nuxt/ui",
+    "nuxt-og-image",
+    "@pinia/nuxt",
+    "@nuxt/fonts",
+  ],
   css: ["~/assets/css/main.css"],
 
   site: {
@@ -38,10 +44,41 @@ export default defineNuxtConfig({
       // so we exclude it from their optimization step
       exclude: ["behave_blog_demo"],
     },
+    build: {
+      modulePreload: { polyfill: false },
+    },
+    plugins: [
+      // https://github.com/tailwindlabs/tailwindcss/discussions/16119
+      // (suppresses a warning that can be ignored)
+      {
+        apply: "build",
+        name: "vite-plugin-ignore-sourcemap-warnings",
+        configResolved(config) {
+          const originalOnWarn = config.build.rollupOptions.onwarn;
+          config.build.rollupOptions.onwarn = (warning, warn) => {
+            if (
+              warning.code === "SOURCEMAP_BROKEN" &&
+              warning.plugin === "@tailwindcss/vite:generate:build"
+            ) {
+              return;
+            }
+
+            if (originalOnWarn) {
+              originalOnWarn(warning, warn);
+            } else {
+              warn(warning);
+            }
+          };
+        },
+      },
+    ],
   },
 
   routeRules: {
-    "/": { prerender: true },
+    "/": { prerender: true, ogImage: false },
+    "/cv": { ogImage: false },
+    "/now": { ogImage: false },
+    "/posts": { ogImage: false },
 
     // `/about` no longer exists; redirects to `/`
     "/about": { redirect: "/" },
@@ -89,6 +126,12 @@ export default defineNuxtConfig({
         script: productionScripts,
       },
     },
+  },
+
+  // https://github.com/nuxt/nuxt/issues/34812
+  // https://www.reddit.com/r/Nuxt/comments/1sk13zy/nuxt_44_duplicated_imports_useappconfig_warning/
+  experimental: {
+    serverAppConfig: false,
   },
 
   nitro: {
