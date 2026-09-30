@@ -3,4 +3,8 @@ allowBuilds:
   better-sqlite3: true
   esbuild: true
   vue-demi: true
+overrides:
+  '@tiptap/core': 3.31.3
+  '@tiptap/pm': 3.31.3
+  esbuild: 0.28.2
 shamefullyHoist: true
